@@ -1,0 +1,65 @@
+@import "config";
+
+// CUSTOM USER STYLES & IMPORTS
+*:focus {
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+.container {
+  max-width: 1310px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 1024px) {
+  .container {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media (max-width: 330px) {
+  .container {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+
+
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/socialMedia";
+@import "blocks/foxy";
+@import "blocks/search";
+@import "blocks/horizontalBar";
+@import "blocks/dateAndViews";
+@import "blocks/verticalBlock";
+@import "blocks/imgBlock";
+@import "blocks/titles";
+@import "blocks/slider";
+@import "blocks/sections";
+@import "blocks/newMagazine";
+@import "blocks/popular";
+@import "blocks/button";
+@import "blocks/form";
+@import "blocks/part1";
+@import "blocks/part2";
+@import "blocks/part3";
+@import "blocks/part4";

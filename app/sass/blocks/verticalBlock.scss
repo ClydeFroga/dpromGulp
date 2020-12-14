@@ -1,0 +1,50 @@
+.verticalBlock {
+  flex: 0 0 55%;
+  margin-right: 20px;
+  background-color: #FAFAFA;
+  &Title {
+    display: flex;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    letter-spacing: 0.25px;
+    margin-bottom: 15px;
+  }
+  &Text {
+    font-size: 10px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.4px;
+  }
+  &Block {
+    padding: 20px 20px 0 20px;
+    .dateAndViews {
+      margin-top: 10px;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .verticalBlock {
+    flex: 0 0 50%;
+    &Title {
+      font-size: 8px;
+      line-height: 15px;
+    }
+    &Text {
+      font-size: 7px;
+      line-height: 15px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .verticalBlock {
+    padding-bottom: 25px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,64 @@
+.horizontalBar {
+  > div {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    > a, > div {
+      display: flex;
+      flex-direction: row;
+   }
+    span {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__Right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    > a {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+    }
+  }
+   > div:last-child {
+    margin-bottom: 0 !important;
+     padding-bottom: 0;
+  }
+  .horizontalBarFirst {
+    position: relative;
+    flex: 0 0 33%;
+    img {
+      margin-right: 11px;
+    }
+    margin-right: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .horizontalBar {
+    &__Right > a {
+      font-size: 8px !important;
+      line-height: 10px !important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .horizontalBar {
+    div:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+    > div {
+      span {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+}

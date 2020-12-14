@@ -1,0 +1,27 @@
+.h2Title {
+  text-decoration: none;
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+  align-items: center;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+}
+.h2Title.h2TitleBorder {
+  padding-bottom: 12px;
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid $main-color;
+}
+
+@media (max-width: 768px) {
+  .h2Title {
+    font-size: 15px;
+  }
+  .h2Title.h2TitleBorder {
+    padding-bottom: 12px;
+    border-bottom: 1px solid $main-color;
+  }
+}

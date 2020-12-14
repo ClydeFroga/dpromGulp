@@ -1,0 +1,36 @@
+// USER VARIABLES SECTION
+
+$main-color: #9E6B36;
+$brown2: #AE8962;
+$brown3: #B1987D;
+$grey1: #6F6F6F;
+$grey2: #878787;
+$grey3: #A8A8A8;
+$grey4: #E5E5E5;
+$secondary-color: #FF8B00;
+
+$font-size: 16px;
+$line-height: 24px;
+$userfont: Inter, sans-serif;
+
+
+// GENERAL DOCUMENT STYLES
+
+body {
+  margin: 0;
+  position: relative;
+  color: black;
+}
+
+*{
+   transition-duration: .5s;
+  font-size: $font-size;
+  font-family: $userfont;
+  line-height: $line-height;
+  font-weight: 400;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

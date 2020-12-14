@@ -1,0 +1,16 @@
+.search {
+  display: flex;
+  align-items: flex-start;
+  &:before {
+    content: url("../images/dist/search.svg");
+    margin-right: 10px;
+  }
+  input {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    border: none;
+    padding-bottom: 3px;
+    border-bottom: 0.5px solid $grey4;
+  }
+}

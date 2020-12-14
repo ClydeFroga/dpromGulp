@@ -1,0 +1,13 @@
+.part4 {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+@media (max-width: 576px) {
+  .part4{
+    grid-template-columns: 1fr;
+  }
+}

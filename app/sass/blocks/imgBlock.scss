@@ -1,0 +1,22 @@
+.imgBlock {
+  display: block;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 24.6%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.imgBlock.imgBlockHalf {
+  padding-top: 56.6%;
+}
+
+.imgBlock.imgBlockFull {
+  padding-top: 74.6%;
+  margin-bottom: 13px;
+}

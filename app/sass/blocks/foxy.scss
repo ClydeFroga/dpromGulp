@@ -1,0 +1,101 @@
+.foxy {
+  width: 300px;
+  height: auto;
+  display: block;
+  a {
+    display: block;
+    width: 300px;
+    min-height: 300px;
+    height: auto;
+  }
+}
+
+.foxyA {
+  width: 300px;
+  height: auto;
+  display: block;
+  a {
+    display: block;
+    width: 300px;
+    min-height: 500px;
+    height: auto;
+  }
+}
+
+.foxyLong {
+  max-width: 728px;
+  min-width: 728px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  a {
+    width: 100%;
+    height: 90px;
+    display: block;
+  }
+}
+
+.foxyFull {
+  margin-top: 40px;
+  max-width: 1280px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  a {
+    width: 100%;
+    height: 150px;
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  .foxyLong {
+    margin: auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  .foxyA {
+    display: flex;
+    width: 100%;
+    a {
+      width: 160px;
+      height: auto;
+      min-height: 270px;
+    }
+  }
+  .foxy {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    a {
+      min-height: unset;
+      width: 160px;
+      height: 160px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .foxyLong {
+    min-width: 0;
+  }
+  .foxy {
+    margin: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .foxy {
+    justify-content: center;
+    a {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  .foxyFull {
+    a {
+      height: 65px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.popular {
+  .h2Title {
+    margin-bottom: 20px;
+  }
+  .horizontalBar {
+    > div {
+      > div {
+        background-color: #FAFAFA;
+        .horizontalBarFirst {
+          flex: 0 0 29%;
+          padding-top: 21.6%;
+        }
+      }
+    }
+    &__Right {
+      justify-content: center;
+     > a {
+       font-weight: 600;
+       font-size: 14px;
+       line-height: 20px;
+       letter-spacing: 0.25px;
+       margin-bottom: 10px;
+     }
+    }
+  }
+}

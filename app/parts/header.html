@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="images/favicon.png" />
+    <meta property="og:image" content="images/dist/preview.jpg" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/app.min.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__top">
+            <div class="header__topSpec">
+              <span>спецпроект</span>
+            </div>
+            <div class="container">
+              <div class="header__topText">
+                <a class="headerHiddenLink" href="#">
+                  Mining World Russia
+                </a>
+                <span class="header__topTitle">Mining World Russia</span>
+              </div>
+              <div class="header__topButtons">
+                <span>Узнать больше</span>
+                <span>Свернуть</span>
+              </div>
+              <div class="header__topButtonsHidden">
+                <span>Закрыть</span>
+              </div>
+            </div>
+        </div>
+
+        <div class="header__hidden">
+          <div class="container">
+            <p>
+              Что ж, господа, вот такой он, 2020 год: никакой определённости. Весной опасения о судьбе MiningWorld Russia всё-таки сбылись: в апреле запланированная выставка не состоялась. Добро ещё, что не отменили, а только перенесли.
+            </p>
+            <a href="#">
+              Подробнее
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <script>
+        if(localStorage.getItem('topDeleted') === 'true') {
+          document.querySelector('.header__container').classList.add('deleted')
+        } else if(localStorage.getItem('topCollapsed') === 'true') {
+          document.querySelector('.header__container').classList.add('collapsed')
+          document.querySelector('.header__topButtons span:last-child').style.display = 'none'
+        }
+
+      </script>
+
+      <div class="container header__bot">
+
+        <div class="header__botTop">
+          <a href="#" class="header__botTopLogo">
+            <img src="images/dist/logo.png">
+          </a>
+          <div class="header__botTopLinks">
+            <ul class="navbar">
+              <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35065"><a href="https://lks.promogroupmedia.ru/">Мероприятия</a></li>
+              <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40560"><a href="https://forestcomplex.ru/arhiv/">Отраслевая пресса</a></li>
+              <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40577"><a href="https://forestcomplex.ru/events">Рекламодателям</a></li>
+            </ul>
+            <div class="header__botTopLinksRight">
+              <div class="search">
+                <input type="search" placeholder="    Поиск...">
+              </div>
+              <div class="socialMedia">
+                <a href="#">
+                  <svg>
+                    <use href="images/src/map.svg#inst"/>
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg>
+                    <use href="images/src/map.svg#vk"/>
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg>
+                    <use href="images/src/map.svg#facebook"/>
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg>
+                    <use href="images/src/map.svg#tube"/>
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg>
+                    <use href="images/src/map.svg#zen"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="toggler"></button>
+        </div>
+
+        <div class="header__botBottom">
+          <div class="header__botBottomHidden576">
+            <div class="search">
+              <input type="search" placeholder="    Поиск...">
+            </div>
+            <ul class="navbar">
+              <li i class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35065"><a href="https://lks.promogroupmedia.ru/">Мероприятия</a></li>
+              <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40560"><a href="https://forestcomplex.ru/arhiv/">Отраслевая пресса</a></li>
+              <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40577"><a href="https://forestcomplex.ru/events">Рекламодателям</a></li>
+            </ul>
+          </div>
+          <div class="header__botBottomHidden">
+            <ul class="navbar">
+              <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35065"><a href="https://lks.promogroupmedia.ru/">Мероприятия</a></li>
+              <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40560"><a href="https://forestcomplex.ru/arhiv/">Отраслевая пресса</a></li>
+              <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40577"><a href="https://forestcomplex.ru/events">Рекламодателям</a></li>
+            </ul>
+          </div>
+          <ul class="header__botBottomMenu">
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-40470"><a href="https://forestcomplex.ru/sections/novosti/">Новости</a></li>
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-40823"><a href="https://forestcomplex.ru/sections/centr/">В центре внимания</a></li>
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-40471"><a href="https://forestcomplex.ru/sections/market/">Рынок</a></li>
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-40473"><a href="https://forestcomplex.ru/sections/analitika/">Аналитика</a></li>
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-40824"><a href="https://forestcomplex.ru/sections/plan/">Крупным планом</a></li>
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-40825"><a href="https://forestcomplex.ru/sections/tehnologii/">Технологии</a></li>
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-40826">
+              <a href="#">Отраслевая дискуссия</a>
+            </li>
+            <li class="dropdown menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-40472">
+              <a href="#">Еще рубрики</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-39960"><a href="https://localhost/lesk/sections/round-table/">Круглый стол</a></li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-39961"><a href="https://localhost/lesk/sections/close-up/">Крупным планом</a></li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-39962"><a href="https://localhost/lesk/sections/news/">Новости</a></li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-39960"><a href="https://localhost/lesk/sections/round-table/">Круглый стол</a></li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-39961"><a href="https://localhost/lesk/sections/close-up/">Крупным планом</a></li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-39962"><a href="https://localhost/lesk/sections/news/">Новости</a></li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-39960"><a href="https://localhost/lesk/sections/round-table/">Круглый стол</a></li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-39961"><a href="https://localhost/lesk/sections/close-up/">Крупным планом</a></li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-sections menu-item-39962"><a href="https://localhost/lesk/sections/news/">Новости</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </header>
+  </body>
+</html>

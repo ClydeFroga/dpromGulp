@@ -1,0 +1,128 @@
+.newMagazine {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 6.77%, rgba(196, 196, 196, 0.71) 100%);
+  &__bottom {
+    margin: auto;
+    padding: 20px 25px 25px 25px;
+    display: flex;
+    &Img {
+      z-index: 1;
+      flex: 0 0 50%;
+      justify-content: center;
+      display: flex;
+      img {
+        box-sizing: content-box;
+        border: 5px solid white;
+        max-width: 239px;
+        max-height: 346px;
+      }
+    }
+    &Text {
+      z-index: 1;
+      flex: 0 0 30%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      &Press, &Subscribe, &Archive {
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      &Title {
+        font-size: 23px;
+        line-height: 32px;
+        letter-spacing: 0.15px;
+      }
+      .button {
+        width: 165px;
+        height: 44px;
+      }
+    }
+  }
+  &:before {
+    background: url("../svg/assets/Union.svg") no-repeat;
+    content: '';
+    position: absolute;
+    z-index: 0;
+    bottom: -7px;
+    width: 55%;
+    height: 100%;
+    background-size: contain;
+    background-position: bottom;
+  }
+  &:after {
+    content: '';
+    background: url("../svg/assets/middleСircle.svg") no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 46%;
+    height: 100%;
+    bottom: 30px;
+    left: 25px;
+    position: absolute;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .newMagazine {
+    &__bottom {
+      &Img {
+        flex: 0 0 40%;
+      }
+      &Text {
+        &Press, &Subscribe, &Archive {
+          font-size: 7px;
+        }
+        &Title {
+          font-size: 15px;
+        }
+        .button {
+          width: 70%;
+          height: 30px;
+        }
+      }
+    }
+    &:after {
+      bottom: 10px;
+      left: 10px;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .newMagazine {
+    &__bottom {
+      flex-direction: column;
+      &Img {
+        order: 2;
+        justify-content: flex-start;
+      }
+      &Text {
+        flex: unset;
+        order: 1;
+        height: 220px;
+      }
+    }
+    &:after {
+      bottom: 5%;
+      width: 85%;
+      left: 35px;
+    }
+    &:before {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .newMagazine {
+    &:after {
+      bottom: 4%;
+      width: 82%;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.slider {
+  min-width: 0;
+  overflow: hidden;
+  &__title {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+  .dateAndViews {
+    margin-top: 15px;
+    justify-content: space-between;
+    .category {
+      margin: 0;
+    }
+  }
+  &__scrollbar {
+
+    margin-top: 25px;
+    height: 13px;
+    .swiper-scrollbar-drag {
+      position: relative;
+      &:after {
+        background-image: url("../../svg/assets/SliderDrag.svg");
+        content: '';
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+      }
+      border-radius: 0;
+      background-color: $brown3;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    &__title {
+      font-size: 8px;
+      line-height: 10px;
+    }
+  }
+}
