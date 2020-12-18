@@ -1,0 +1,14 @@
+.part6 {
+  margin-top: 40px;
+
+  .sliderBackground__Small {
+    position: relative;
+    .button {
+      margin: 0;
+      z-index: 3;
+      position: absolute;
+      top: 9px;
+      left: 8px;
+    }
+  }
+}

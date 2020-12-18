@@ -70,7 +70,7 @@
           align-items: center;
           text-align: right;
           letter-spacing: 1.5px;
-          color: #FAFAFA;
+          color: $grey5;
           text-transform: uppercase;
           &:before {
             margin-right: 10px;
@@ -169,7 +169,7 @@
           }
         }
         span:last-child {
-          background-color: #FAFAFA;
+          background-color: $grey5;
           color: #C6C6C6;
           &:before {
             content:'';
@@ -280,13 +280,11 @@
         justify-items: stretch;
         text-align: center;
         grid-template-columns: repeat(auto-fit,minmax(75px,auto));
-        .dropdown {
-          position: relative;
-        }
+
         li {
           a {
             padding: 10px 0;
-            background-color: #FAFAFA;
+            background-color: $grey5;
             display: block;
             height: 100%;
             text-decoration: none;
@@ -296,11 +294,10 @@
             line-height: 32px;
             letter-spacing: 0.44px;
             text-transform: uppercase;
+            &:hover {
+              background-color: $grey4;
+            }
           }
-        }
-        li.dropdown > a {
-          color: white;
-          background-color: $brown2;
         }
       }
       &Hidden {
@@ -326,14 +323,37 @@
     }
   }
 }
-
+.dropdown {
+  position: relative;
+  display: inline-block;
+  > a:after {
+    content: url("../svg/assets/arrowDown.svg");
+    width: 10px;
+    height: 5px;
+    margin-left: 5px;
+  }
+}
+.dropdown.open {
+  > a {
+    background-color: $main-color;
+    color: white;
+    &:hover {
+      background-color: $main-color;
+      color: white;
+    }
+  }
+  > a:after {
+    content: url("../svg/assets/arrowUp.svg");
+  }
+}
 .sub-menu {
+  z-index: 5;
   display: none;
   padding: 0;
   list-style: none;
   position: absolute;
   top: 100%;
-  background-color: #FAFAFA;
+  background-color: $grey5;
   width: 100%;
   li {
     a {

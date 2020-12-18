@@ -67,7 +67,7 @@ function scripts() {
 function styles() {
 	return src('app/sass/main.scss')
 		.pipe(sass({ outputStyle: 'compressed' }))
-		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
+		.pipe(autoprefixer({ grid: 'autoplace' }))
 		.pipe(rename('app.min.css'))
 		.pipe(dest('app/css'))
 		.pipe(browserSync.stream())

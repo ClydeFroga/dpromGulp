@@ -1,7 +1,8 @@
 .form {
   margin-top: 120px;
   &__wrapper {
-    padding: 20px 25px;
+
+    padding: 0 25px;
     display: flex;
     background-color: $brown3;
     position: relative;
@@ -21,43 +22,126 @@
     }
   }
   .sp-form-outer {
-    flex: 0 0 60%;
+    margin-left: 30px;
+    flex: 0 0 70%;
     .sp-form {
       display: flex;
       width: unset;
     }
     form {
       display: grid;
+      column-gap: 20px;
       grid-template:
-    'text 1'
-    'text 2'
-    'text 3'
-    'text 4'
-    /1fr 1fr
+    'text theTwo theTwo'
+    'text theThree theThree'
+    'text theFour theFour'
+    'text theFive theLastOne'
+    /1.5fr 1fr .5fr
     ;
       align-items: center;
+      .sp-field {
+        position: relative;
+        padding: 0;
+        margin: 10px;
+      }
+      .sp-control-label {
+        strong {
+          position: absolute;
+          right: 10px;
+          top: 5px;
+          color: red;
+          z-index: 2;
+        }
+      }
+      .sp-checkbox-option {
+        position: relative;
+
+        label {
+          input:checked+  span:first-of-type::before {
+            background-image: url("../svg/assets/checked.svg");
+            background-size: 100%;
+            background-color: #5353535c;
+          }
+          span:first-of-type {
+            //display: inline-flex;
+            margin-left: 30px;
+
+            &::before {
+              position: absolute;
+              left: 0;
+              top: 30%;
+              content: '';
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              flex-shrink: 0;
+              flex-grow: 0;
+              border: 2px solid rgba(0, 0, 0, 0.12);;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: 50% 50%;
+              align-self: center;
+            }
+          }
+        }
+      }
+      input[type=checkbox] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        display: inline-flex;
+        align-self: center;
+      }
       input {
         border-radius: 0;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 12px;
+        line-height: 14px;
       }
       > div:nth-child(1) {
         grid-area: text;
-        color: #FFF5F5;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
+        span, strong {
+          color: white;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 36px;
+        }
       }
       > div:nth-child(2) {
-        grid-area: 1;
+        grid-area: theTwo;
       }
       > div:nth-child(3) {
-        grid-area: 2;
+        grid-area: theThree;
       }
       > div:nth-child(4) {
-        grid-area: 3;
+        grid-area: theFour;
+        margin: 0;
       }
       > div:nth-child(5) {
-        grid-area: 4;
+        grid-area: theFive;
+        label {
+         display: flex;
+        }
+        strong {
+          color: red;
+        }
+        a {
+          text-decoration: underline;
+        }
+        span, a {
+          font-size: 12px;
+          line-height: 14px;
+          color: white;
+        }
+      }
+      > div:nth-child(6) {
+        grid-area: theLastOne;
         button {
+          color: white;
+          padding: 10px 20px;
+          border: none;
           border-radius: 0;
           background-color: $main-color;
           font-weight: bold;
@@ -65,25 +149,73 @@
           line-height: 16px;
           letter-spacing: 1.5px;
           text-transform: uppercase;
+          &:hover {
+            opacity: 1;
+            top: 0;
+          }
         }
       }
     }
   }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 1023px) {
   .form {
     &__wrapper {
+      padding: 20px 25px;
       img {
-        width: 30%;
+        right: 2%;
+        width: 25%;
       }
     }
+    .sp-form {
+      padding: 0;
+    }
     .sp-form-outer {
-      flex: unset;
+      flex: 0 0 70%;
+      margin: 0;
       form {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        grid-template:
+    'text theTwo '
+    'text theThree '
+    'text theFour '
+    'theFive theFive '
+    'theLastOne theLastOne '
+    /1fr 1fr
+      ;
+        > div:nth-child(1) {
+          span, strong {
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 18px;
+          }
+        }
+        > div:nth-child(5) {
+          .sp-checkbox-option {
+            label {
+              span:first-of-type {
+                &::before {
+                  top: 0;
+                }
+              }
+            }
+          }
+          span, a {
+            font-size: 7px;
+            line-height: 10px;
+          }
+        }
+        > div:nth-child(6) {
+          margin-bottom: 0;
+          display: flex;
+          justify-content: flex-end;
+          button {
+            font-size: 7px;
+            line-height: 10px;
+          }
+        }
       }
     }
   }
@@ -97,23 +229,28 @@
       padding-bottom: 0;
       img {
         position: unset;
-        width: 70%;
+        width: 50%;
         margin: auto;
       }
     }
     .sp-form-outer {
+      margin-left: 0;
       .sp-form {
         padding: 0;
       }
       form {
+        display: flex;
+        flex-direction: column;
         >div {
           width: 100%;
         }
         input {
           width: 100%;
         }
+        > div:nth-child(6) {
+          justify-content: flex-start;
+        }
       }
     }
   }
 }
-

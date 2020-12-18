@@ -9,38 +9,12 @@
   /9fr 3fr;
 
   .h2Title {
+    margin: 0;
     grid-area: title;
   }
   &__left {
     grid-area: left;
     display: flex;
-    &Right {
-      &Block {
-        display: flex;
-        flex-direction: column;
-        &:first-child {
-          margin-top: 40px;
-        }
-        &:not(:last-child) {
-          border-bottom: 1px solid $grey4;
-          padding-bottom: 35px;
-          margin-bottom: 40px;
-        }
-        &Title {
-          font-weight: 600;
-          font-size: 14px;
-          line-height: 20px;
-          letter-spacing: 0.25px;
-          margin-bottom: 10px;
-        }
-        &Text {
-          font-size: 12px;
-          line-height: 16px;
-          letter-spacing: 0.4px;
-          margin-bottom: 20px;
-        }
-      }
-    }
   }
   &__foxy {
     grid-area: foxy;
@@ -54,42 +28,12 @@
 }
 
 @media (max-width: 1023px) {
-.part2 {
-  &__left {
-    &Right {
-      &Block {
-
-        &:first-child {
-          margin-top: 20px;
-        }
-        &:not(:last-child) {
-          border-bottom: 1px solid $grey4;
-          padding-bottom: 15px;
-          margin-bottom: 20px;
-        }
-        &Title {
-          font-weight: 600;
-          font-size: 7px;
-          line-height: 10px;
-        }
-        &Text {
-          font-size: 7px;
-          line-height: 10px;
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-}
-}
-
-@media (max-width: 768px) {
   .part2 {
     margin-top: 0;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .part2 {
     margin-top: 40px;
     grid-template:

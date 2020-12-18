@@ -1,0 +1,77 @@
+.rubric {
+  &__top{
+    display: grid;
+    column-gap: 30px;
+    row-gap: 25px;
+    grid-template:
+    "title sidebar"
+    "left sidebar"
+    /1fr 300px
+  ;
+    > .h2Title {
+      grid-area: title;
+      margin-bottom: 0;
+    }
+    &Left {
+      grid-area: left;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      .horizontalBarFirst {
+        flex: 0 0 23%;
+        padding-top: 17%;
+      }
+      .loadmore {
+        margin-left: 25%;
+      }
+    }
+    &Sidebar {
+      grid-area: sidebar;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .rubric {
+    &__top {
+      grid-template:
+    "title sidebar"
+    "left sidebar"
+    /1fr 160px
+    ;
+      &Left {
+        grid-area: left;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .horizontalBarFirst {
+          flex: 0 0 27%;
+          padding-top: 19.6%;
+        }
+        .loadmore {
+          margin-left: 0;
+        }
+      }
+    }
+
+  }
+}
+@media (max-width: 767px) {
+  .rubric {
+    &__top {
+      grid-template:
+        "title"
+        "left "
+        "sidebar"
+        /1fr
+        ;
+      .horizontalBar__RightText {
+        display: none;
+      }
+    }
+  }
+}

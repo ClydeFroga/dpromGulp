@@ -1,0 +1,24 @@
+.sidebarNews {
+  .horizontalBar {
+    > div {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+    > div:last-of-type {
+      border: none;
+    }
+    .horizontalBarFirst {
+      flex: 0 0 32%;
+      padding-top: 23.6%;
+    }
+    .horizontalBar__Right{
+      justify-content: center;
+    }
+  }
+  .dateAndViews {
+    padding-left: 37%;
+    justify-content: space-between;
+    .date {
+      margin-right: 0;
+    }
+  }
+}

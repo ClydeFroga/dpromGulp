@@ -1,0 +1,15 @@
+.pagination {
+  a, span {
+    padding: 16px;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $grey1;
+    background-color: $grey5;
+  }
+  span.current {
+    background-color: $brown3;
+  }
+}

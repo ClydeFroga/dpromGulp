@@ -10,6 +10,9 @@
   "slider slider slider slider"
   /2.5fr 3fr 3fr 3fr
 ;
+  .h2Title {
+    margin: 0;
+  }
   &__left {
     grid-area: left;
     &Left {
@@ -20,10 +23,10 @@
           width: 13px;
         }
         &::-webkit-scrollbar-track {
-          background: #FAFAFA;
+          background: $grey5;
         }
         &::-webkit-scrollbar-thumb {
-          background: $main-color;
+          background: $brown3;
         }
         scrollbar-width: thin;
         text-align: left;
@@ -57,35 +60,12 @@
     }
   }
   &__mid {
-    background-color: #FAFAFA;
+    background-color: $grey5;
     grid-area: mid;
     display: flex;
     padding-right: 10px;
     max-height: 500px;
-    &Right {
-      .horizontalBar {
-        > div {
-          border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-        }
-        > div:last-of-type {
-          border: none;
-        }
-        .horizontalBarFirst {
-          flex: 0 0 32%;
-          padding-top: 23.6%;
-        }
-        .horizontalBar__Right{
-          justify-content: center;
-        }
-      }
-      .dateAndViews {
-        padding-left: 37%;
-        justify-content: space-between;
-        .date {
-          margin-right: 0;
-        }
-      }
-    }
+
     .verticalBlock {
       .imgBlock {
         border-bottom: 2px solid $secondary-color;
@@ -93,7 +73,6 @@
     }
   }
   .foxyA {
-    justify-self: flex-end;
     grid-area: foxy;
   }
   .slider {
@@ -130,7 +109,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .part1 {
       grid-template:
       "mid mid foxy" auto
@@ -154,7 +133,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .part1 {
     grid-template:
       "mid" auto
@@ -167,12 +146,6 @@
       flex-direction: column;
       padding: 0;
       background-color: transparent;
-    }
-    .foxyA {
-      a {
-        width: 300px;
-        height: 500px;
-      }
     }
     &__left {
       #scroll {

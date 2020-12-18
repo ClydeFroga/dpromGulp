@@ -7,6 +7,7 @@ $grey1: #6F6F6F;
 $grey2: #878787;
 $grey3: #A8A8A8;
 $grey4: #E5E5E5;
+$grey5: #fafafa;
 $secondary-color: #FF8B00;
 
 $font-size: 16px;
@@ -23,11 +24,25 @@ body {
 }
 
 *{
-   transition-duration: .5s;
+  transition-duration: .5s;
   font-size: $font-size;
   font-family: $userfont;
   line-height: $line-height;
+  letter-spacing: 0.44px;
   font-weight: 400;
+}
+
+@media (max-width: 1023px) {
+  * {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 730px) {
+  * {
+    font-size: 13px;
+    line-height: 22px;
+  }
 }
 *,
 *::before,

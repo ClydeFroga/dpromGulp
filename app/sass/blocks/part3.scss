@@ -35,13 +35,12 @@
     justify-self: flex-end;
   }
   .h2Title {
-    margin-bottom: 40px;
     grid-column-start: 1;
     grid-column-end: 3;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .part3 {
     grid-template-columns: repeat(1, 1fr);
     .horizontalBar {

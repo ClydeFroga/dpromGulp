@@ -1,0 +1,28 @@
+.partnerMaterial {
+  border: 1px solid $main-color;
+  background-color: $grey5;
+  padding: 12px;
+  margin: 0 -12px;
+  &__info {
+    font-weight: normal !important;
+    color: white !important;
+    padding: 10px 15px;
+    background-color: $brown3;
+  }
+  &__hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .partnerMaterial {
+    &__info {
+      font-size: 7px !important;
+      line-height: 16px !important;
+      padding: 7px 12px;
+    }
+    &__hidden {
+      display: flex;
+    }
+  }
+}

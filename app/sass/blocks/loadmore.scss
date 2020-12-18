@@ -1,0 +1,23 @@
+.loadmore {
+  background-color: $main-color;
+  max-width: max-content;
+  padding: 10px 30px;
+  cursor: pointer;
+  span {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.75px;
+    color: white;
+  }
+}
+
+@media (max-width: 1023px) {
+  .loadmore{
+    padding: 7px 20px;
+    span {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}

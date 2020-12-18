@@ -1,0 +1,540 @@
+.single {
+  &__content {
+    margin-bottom: 30px;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 25px;
+    grid-template:
+    "left sticky sidebar"
+    "foxyLong foxyLong foxyLong"
+    "comments comments comments"
+    /650px 2.5fr 300px
+  ;
+
+    &Left {
+      grid-area: left;
+      h1 {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        margin: 15px 0;
+      }
+      .dateAndViews {
+        justify-content: flex-start;
+        margin-top: 15px;
+      }
+      &Text {
+        margin-top: 60px;
+        position: relative;
+        h2 {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 28px;
+          padding-bottom: 12px;
+          display: block;
+          width: 100%;
+          border-bottom: 1px solid $main-color;
+        }
+        h3 {
+          font-weight: bold;
+          font-size: 22px;
+          line-height: 22px;
+        }
+        h4 {
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 20px;
+        }
+        strong {
+          font-weight: bold;
+        }
+        blockquote {
+          position: relative;
+          background-color: #F4F4F4;
+          padding: 50px 25px 30px 25px;
+          margin: 0 0 35px 0;
+          &:before {
+            content: '';
+            border: 13px solid #F4F4F4;
+            border-left-width: 10px;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-radius: 0;
+            position: absolute;
+            top: 100%;
+            right: 10%;
+          }
+          &:after {
+            padding-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+            content: url("../svg/assets/blockquote.svg");
+          }
+        }
+        .wp-block-image:not(.forBlockquote) {
+          .alignright {
+            float: right;
+            max-width: 250px;
+            position: relative;
+            z-index: 1;
+          }
+          .alignleft {
+            position: relative;
+            float: left;
+            max-width: 250px;
+            z-index: 1;
+          }
+        }
+        .likeBlockquote {
+          margin-top: 50px;
+          position: relative;
+          padding: 20px 35px 20px 30%;
+          background: $grey5;
+          border: 1px solid $brown2;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.25px;
+          &:before {
+            position: absolute;
+            top: -25px;
+            left: 4%;
+            content: url("../svg/assets/likeBlockquote.svg");
+          }
+        }
+        .forBlockquote {
+          position: absolute;
+          z-index: 2;
+          width: 33%;
+          a {
+            display: block;
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+            padding-top: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+          }
+          img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          figcaption {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 10px;
+            line-height: 16px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #C4C4C4;
+          }
+        }
+        .forBlockquote + blockquote {
+          margin-top: 100px;
+          padding-left: 35%;
+        }
+        .wp-block-image {
+          margin: 15px 0;
+          figcaption {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.25px;
+            color: $grey1;
+          }
+        }
+        a {
+          color: $main-color;
+          text-decoration: underline;
+        }
+        .wp-block-table {
+          margin: 0;
+        }
+        table {
+          table-layout: fixed;
+          width: 100%;
+          border-collapse: collapse;
+          max-width: 100%;
+          overflow-x: auto;
+          tbody {
+            tr:nth-child(even) {
+              background-color: $grey5;
+            }
+            tr {
+              td {
+                font-weight: normal;
+                padding: 5px 10px;
+              }
+            }
+            tr:first-of-type {
+              background-color: $grey4;
+              td, strong, span {
+                font-weight: 600;
+              }
+            }
+          }
+          strong {
+            font-weight: normal;
+          }
+
+        }
+        li {
+          padding: 7px 0;
+        }
+        ul {
+          position: relative;
+          list-style-type: none;
+          li:before {
+            position: absolute;
+            left: 15px;
+            content: url("../svg/assets/spisok.svg");
+          }
+        }
+        ol {
+          padding-left: 0;
+          list-style: none;
+          counter-reset: li;
+          ol, ul {
+            padding-left: 15px;
+          }
+          li:before {
+            counter-increment: li;
+            content: counters(li,".") ". ";
+          }
+          //list-style-type: disc;
+        }
+      }
+      &Sharing {
+        margin-left: 15px;
+        margin-top: 30px;
+        border-top: 1px solid $grey4;
+        padding-top: 40px;
+        display: flex;
+        a {
+          margin-right: 10px;
+        }
+        span {
+          margin-right: 10px;
+          color: $grey4;
+        }
+      }
+      &Journal {
+        margin: 20px 0 0 15px;
+        padding: 10px 20px;
+        background-color: $grey5;
+        > span {
+          justify-content: space-between;
+          display: flex;
+          align-items: center;
+          span {
+            font-size: 14px;
+          }
+          svg {
+            width: 26px;
+            height: 26px;
+          }
+          a {
+            font-weight: bold;
+            font-size: 14px;
+            color: $main-color;
+            text-decoration: underline;
+          }
+        }
+      }
+      .single__contentSticky {
+        display: none;
+      }
+      &730 {
+        display: none;
+      }
+    }
+    &Sticky {
+      grid-area: sticky;
+      &Block {
+        float: right;
+        max-width: 250px;
+        position: sticky;
+        top: 25px;
+        background-color: $grey5;
+        padding: 40px;
+        > span:not(:last-child) {
+          margin-bottom: 20px;
+          display: block;
+        }
+        > span:nth-child(1), > span:nth-child(2) {
+          strong {
+            font-weight: bold;
+          }
+          font-size: 16px;
+          line-height: 20px;
+        }
+        > span:nth-child(3), > span:nth-child(6) {
+          color: $grey4;
+          letter-spacing: 0.4px;
+        }
+        > span:nth-child(6) {
+          display: flex;
+          justify-content: center;
+          font-size: 12px;
+          line-height: 16px;
+        }
+        > div {
+          display: flex;
+          justify-content: space-between;
+          a:not(:last-child) {
+            margin-right: 5px;
+          }
+        }
+        > img {
+          display: flex;
+          margin: 30px auto 15px auto;
+        }
+        &Thumbs {
+          display: flex;
+          svg {
+            width: 17px;
+            height: 16px;
+          }
+        }
+      }
+    }
+    &Sidebar {
+      grid-area: sidebar;
+      &Block {
+        display: grid;
+        row-gap: 40px;
+        grid-template-columns: 1fr;
+        &Foxy {
+          > div {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .foxyLong {
+      grid-area: foxyLong;
+    }
+    .comments {
+      grid-area: comments;
+    }
+  }
+  &__other {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .single {
+    &__content {
+        grid-template:
+      "left sidebar"
+      "foxyLong foxyLong"
+      "comments comments"
+      /1fr 300px
+      ;
+      &Left {
+        .single__contentSticky {
+          margin: 0 0 20px 20px;
+          display: block;
+          float: right;
+          &Block {
+            padding: 20px;
+          }
+        }
+      }
+      &Sticky {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .single {
+    &__content {
+      grid-template:
+      "left sidebar"
+      "foxyLong foxyLong"
+      "comments comments"
+      /1fr 160px
+    ;
+      &Left {
+        .dateAndViews {
+          span, a {
+            font-size: 10px;
+          }
+        }
+        &Text {
+          table {
+            span, strong, td {
+              font-size: 7px;
+            }
+          }
+          .likeBlockquote {
+            padding-left: 35%;
+          }
+        }
+        &Sharing {
+          a {
+            font-size: 10px;
+          }
+          span {
+            font-size: 10px;
+          }
+        }
+        &Journal {
+          span {
+            font-size: 10px;
+            a {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+
+      &SidebarBlockFoxy {
+        .foxy {
+          display: flex;
+          justify-content: center;
+          a {
+            width: 100%;
+            height: auto;
+            min-height: 160px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .single {
+    margin-top: 30px;
+    &__content {
+      grid-template:
+      "left"
+      "foxyLong"
+      "comments"
+      "sidebar"
+      /1fr
+    ;
+      //grid-template-columns: 1fr;
+      &Left {
+        .single__contentSticky {
+          display: none;
+        }
+        &730 {
+          margin: 15px -40px 0 -40px;
+          display: block;
+           span:nth-child(1) {
+             color: $grey1;
+            font-size: 10px;
+            line-height: 24px;
+          }
+          .single__contentStickyBlock {
+            padding: 20px 40px;
+            > div {
+              justify-content: flex-start;
+              .socialMedia {
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+        &Text {
+          font-size: 13px;
+          line-height: 22px;
+          .wp-block-image {
+            figcaption {
+              font-size: 9px;
+              line-height: 20px;
+            }
+          }
+          .forBlockquote {
+            position: relative;
+            width: 100%;
+            display: block;
+            > figure {
+              width: 30%;
+            }
+          }
+          .forBlockquote + blockquote {
+            margin-top: -160px;
+            padding-left: 25px;
+            padding-top: 160px;
+          }
+          .likeBlockquote {
+            padding-left: 35px;
+            padding-top: 100px;
+          }
+        }
+        &Sharing {
+          padding-top: 20px;
+          flex-direction: column;
+          span {
+            margin-bottom: 10px;
+          }
+        }
+        &Journal {
+          span {
+            flex-wrap: wrap;
+          }
+        }
+      }
+      &Sidebar {
+        .sidebarNews, .sidebarNewMag {
+          display: none;
+        }
+        .foxyA {
+          a {
+            width: 300px;
+            min-height: 500px;
+          }
+        }
+        .foxy {
+          a {
+            width: 300px;
+            min-height: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .single {
+    &__content {
+      &Left {
+        &730 {
+          margin: 15px -20px 0 -20px;
+          .single__contentStickyBlock {
+            padding: 20px 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  .single {
+    &__content {
+      &Left {
+        &730 {
+          margin: 15px -5px 0 -5px;
+          .single__contentStickyBlock {
+            padding: 20px 5px;
+          }
+        }
+        table {
+          word-break: break-all;
+        }
+      }
+    }
+  }
+}

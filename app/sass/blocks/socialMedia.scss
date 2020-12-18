@@ -13,13 +13,16 @@
     background-color: $main-color;
     max-width: 20px;
     max-height: 20px;
+    &:hover {
+      background-color: $brown3;
+    }
   }
   svg {
     //color: $main-color;
     //width: 100%;
 
     &:hover {
-      //color: $hover-color;
+      //color: $brown3;
     }
     &:active {
       //color: $active-color;

@@ -16,12 +16,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
     > a {
       font-weight: normal;
       font-size: 12px;
       line-height: 16px;
       display: flex;
       align-items: center;
+    }
+    .horizontalBar__RightTitle {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.25px;
+    }
+    .horizontalBar__RightText {
+      letter-spacing: 0.4px;
     }
   }
    > div:last-child {
@@ -31,24 +41,113 @@
   .horizontalBarFirst {
     position: relative;
     flex: 0 0 33%;
-    img {
-      margin-right: 11px;
-    }
-    margin-right: 11px;
+    margin-right: 2%;
   }
 }
 
-@media (max-width: 768px) {
+.horizontalBar.textCenter {
+  .horizontalBar__Right {
+    justify-content: center;
+  }
+}
+.horizontalBar.textAround {
+  .horizontalBar__Right {
+    justify-content: space-around;
+  }
+}
+.firstBig.horizontalBar {
+  > div:first-child {
+    .horizontalBarFirst {
+      flex: 0 0 43%;
+      padding-top: 32.6%;
+    }
+    .horizontalBar__RightText {
+      font-size: 10px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid $grey4;
+    }
+    margin-bottom: 30px;
+  }
+  > div:not(:first-child) {
+    .horizontalBarFirst {
+      flex: 0 0 17%;
+      padding-top: 12.6%;
+    }
+    .horizontalBar__Right {
+      justify-content: space-around;
+      &Title {
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+.firstBorder.horizontalBar {
+  > div {
+    padding: 15px 15px 20px 15px;
+  }
+  > div:first-of-type {
+    border: 1px solid $grey4;
+  }
+  > div:not(:first-of-type) {
+    border-bottom: 1px solid $grey4;
+  }
+  > div:last-of-type {
+    border-bottom: none;
+    padding-bottom: 15px;
+  }
+  .horizontalBar__Right {
+    gap: 15px;
+    &Title {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+
+
+@media (max-width: 1023px) {
   .horizontalBar {
     &__Right > a {
       font-size: 8px !important;
       line-height: 10px !important;
     }
+    .horizontalBar__RightTitle {
+      font-size: 10px !important;
+      line-height: 20px !important;
+    }
+    .horizontalBar__RightText {
+      font-size: 7px !important;
+      line-height: 16px !important;
+    }
   }
+  //.firstBig.horizontalBar {
+  //  > div:first-child {
+  //    .horizontalBar__RightTitle {
+  //      font-size: 10px !important;
+  //    }
+  //  }
+  //  > div:not(:first-child) {
+  //    .horizontalBar__Right {
+  //      justify-content: space-around;
+  //      &Title {
+  //        font-size: 10px !important;
+  //        line-height: 16px !important;
+  //      }
+  //    }
+  //  }
+  //}
+
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .horizontalBar {
+    .horizontalBar__RightTitle {
+      font-size: 9px !important;
+    }
     div:last-child {
       border: none;
       padding-bottom: 0;
@@ -58,6 +157,41 @@
         font-weight: normal;
         font-size: 12px;
         line-height: 16px;
+      }
+    }
+  }
+  .horizontalBar.textAround {
+    .horizontalBar__Right {
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+  .firstBig.horizontalBar {
+    > div:first-child {
+      > div {
+        flex-direction: column;
+        .horizontalBarFirst {
+          padding-top: 74.6%;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+      .horizontalBar__RightTitle {
+        font-size: 10px !important;
+      }
+    }
+    > div:not(:first-child) {
+      .horizontalBar__Right {
+        .dateAndViews {
+          flex-direction: column;
+          .views {
+            order: 2;
+          }
+          .category {
+            order: 1;
+            align-self: flex-start;
+          }
+        }
       }
     }
   }

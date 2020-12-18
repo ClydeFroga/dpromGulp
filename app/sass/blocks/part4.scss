@@ -6,7 +6,7 @@
   row-gap: 30px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .part4{
     grid-template-columns: 1fr;
   }

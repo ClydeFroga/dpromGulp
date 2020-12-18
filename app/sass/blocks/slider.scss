@@ -1,20 +1,10 @@
 .slider {
   min-width: 0;
   overflow: hidden;
-  &__title {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.4px;
-  }
-  .dateAndViews {
-    margin-top: 15px;
-    justify-content: space-between;
-    .category {
-      margin: 0;
-    }
+  &__hand {
+    display: none;
   }
   &__scrollbar {
-
     margin-top: 25px;
     height: 13px;
     .swiper-scrollbar-drag {
@@ -33,12 +23,159 @@
     }
   }
 }
+.sliderBigOne {
+  &__title {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+  .dateAndViews {
+    margin-top: 15px;
+    justify-content: space-between;
+    .category {
+      margin: 0;
+    }
+  }
+
+}
+
+.sliderBackground {
+  position: relative;
+  &__Small {
+    overflow: hidden;
+    transition: background-color 0.3s ease-in;
+    .imgBlock {
+      &:before {
+        transition: background-color 0.3s ease-in;
+        content: '';
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 1.04%, rgba(0, 0, 0, 0.51) 70.31%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        z-index: 2;
+      }
+      z-index: 1;
+      margin: 0;
+    }
+    &Text {
+
+      z-index: 3;
+      color: white;
+      bottom: 0;
+      position: absolute;
+      &Title  {
+        padding: 20px 20% 20px 25px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        display: block;
+        letter-spacing: 0.25px;
+        color: white;
+      }
+
+    }
+    &Hidden {
+      z-index: 3;
+      padding: 0 10% 10px 25px;
+      position: absolute;
+      bottom: -500px;
+      display: block;
+      margin-top: 25px;
+      margin-right: -15px;
+      span {
+        margin-bottom: 5px;
+        display: block;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.4px;
+        color: $grey4;
+      }
+    }
+    .button {
+      margin: 0 10% 10px 25px;
+      display: block;
+    }
+  }
+  &__Small.effectInclude:hover {
+    .imgBlock:before {
+      background: linear-gradient(0deg, rgba(158, 107, 54, 0.79), rgba(158, 107, 54, 0.79));
+    }
+
+    .sliderBackground__SmallText {
+      bottom: 50%;
+    }
+    .sliderBackground__SmallHidden {
+      bottom: 0;
+    }
+  }
+}
+
+
+@media (max-width: 1023px) {
+  .sliderBackground {
+    &__Small {
+      &Text {
+        &Title  {
+          padding: 20px 10% 20px 25px;
+          font-size: 8px;
+          line-height: 10px;
+        }
+      }
+      &Hidden {
+        padding: 20px 10% 20px 25px;
+        margin-top: 10px;
+        span {
+          font-size: 7px;
+          line-height: 10px;
+        }
+      }
+      .button {
+        margin: 0 10% 20px 25px;
+      }
+    }
+  }
+}
 
 @media (max-width: 768px) {
-  .slider {
+  .sliderBigOne {
     &__title {
       font-size: 8px;
       line-height: 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .sliderBackground {
+    &__Small {
+      &Text {
+        &Title {
+          padding: 10px 15px;
+          font-size: 9px;
+          line-height: 12px;
+        }
+      }
+      &Hidden {
+        padding: 10px 15px;
+      }
+      .button {
+        margin: 10px 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .slider {
+    &__hand{
+      display: block;
+      margin-bottom: 20px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 }

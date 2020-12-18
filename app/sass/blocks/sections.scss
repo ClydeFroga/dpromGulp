@@ -8,7 +8,7 @@
     grid-template-columns: repeat(3, 1fr);
     &Block {
       padding: 25px 0;
-      background-color: #FAFAFA;
+      background-color: $grey5;
       display: flex;
       justify-content: center;
       align-items: center;

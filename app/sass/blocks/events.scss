@@ -1,0 +1,153 @@
+.events {
+  &__block1 {
+    display: grid;
+    row-gap: 20px;
+    grid-template:
+    "title foxy"
+    "list foxy"
+    "page ."
+    /9fr 3fr;
+    column-gap: 20px;
+    .h2Title {
+      grid-area: title;
+      margin-bottom: 0;
+    }
+    &List {
+      grid-area: list;
+      .dateAndViews {
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+    .foxyA {
+      grid-area: foxy;
+    }
+    .loadmore {
+      display: none;
+      margin-left: 18%;
+      grid-area: loadmore;
+    }
+    .pagination {
+      margin-left: auto;
+      grid-area: page;
+    }
+  }
+  &__block1, &__block2 {
+    &List {
+      .imgBlock {
+        flex: 0 0 23%;
+        padding-top: 17.1%;
+      }
+    }
+  }
+  &__block2 {
+    column-gap: 20px;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+  }
+  &__block3 {
+    margin-top: 60px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 5fr 1px 4fr 3fr;
+    &Foxy {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-end;
+    }
+    &Line {
+      border-right: 1px solid $grey4;
+    }
+    .horizontalBar.firstBorder {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  .inTrend {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .events {
+    &__block1 {
+      &List {
+        .horizontalBar__RightText {
+          display: none;
+        }
+      }
+    }
+    &__block1, &__block2 {
+      &List {
+        .imgBlock {
+          flex: 0 0 27%;
+          padding-top: 20.6%;
+        }
+      }
+    }
+    &__block3 {
+      grid-template-columns: 9fr 3fr;
+      &Line, .horizontalBar.firstBorder {
+        display: none;
+      }
+      .foxy {
+        margin: 0;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .events {
+    &__block1 {
+      grid-template:
+        "title"
+        "list"
+        "page"
+        "foxy"
+      /1fr
+        ;
+      .foxyA {
+        a {
+          width: 300px;
+          min-height: 500px;
+        }
+      }
+      .pagination {
+        margin-left: unset;
+      }
+      .dateAndViews {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+    &__block1, &__block2 {
+      &List {
+        .imgBlock {
+          flex: 0 0 38%;
+          padding-top: 28.6%;
+        }
+      }
+    }
+    &__block2 {
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+      .foxy {
+        justify-content: center;
+        a {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    }
+    &__block3 {
+      grid-template-columns: 1fr;
+      &Foxy{
+        grid-row-start: 1;
+        grid-row-end: 2;
+      }
+    }
+  }
+}

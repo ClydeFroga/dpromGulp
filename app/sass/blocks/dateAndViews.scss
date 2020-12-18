@@ -12,8 +12,40 @@
     }
   }
 
+  .eventsDate {
+    padding: 12px 35px;
+    color: white;
+    background-color: $main-color;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .city {
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $main-color;
+    &:before {
+      //content: url("../../svg/assets/city.svg");
+      content: '';
+      width: 19px;
+      height: 19px;
+      background: url("../../svg/assets/city.svg"), no-repeat;
+      position: relative;
+      left: 0;
+      top: 5px;
+      display: inline-flex;
+      margin-right: 2px;
+    }
+  }
 
   .views {
+    //display: flex;
+    //align-items: center;
     &:before {
       content: '';
       width: 12px;
@@ -23,16 +55,27 @@
       left: 0;
       top: 1px;
       display: inline-flex;
-      margin-right: 2px;
+      margin-right: 5px;
     }
   }
 
   .category {
     color: $brown3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    a {
+      margin: 0;
+      color: $brown3;
+    }
   }
 }
 
-@media (max-width: 768px) {
+.dateAndViews.start {
+  justify-content: flex-start;
+}
+
+@media (max-width: 1023px) {
   .dateAndViews {
     span, a {
       font-size: 7px;
@@ -40,6 +83,15 @@
     }
     .category {
       align-self: end;
+    }
+    .eventsDate {
+      padding: 6px 17px;
+      font-size: 7px;
+      line-height: 16px;
+    }
+    .city {
+      font-size: 7px;
+      line-height: 16px;
     }
   }
 }

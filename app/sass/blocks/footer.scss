@@ -1,3 +1,199 @@
-.footer {
+footer {
   margin-top: 50px;
+  background-color: $grey5;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  span {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  strong {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .footer {
+    padding: 80px 15px;
+    display: grid;
+    column-gap: 100px;
+    row-gap: 20px;
+    grid-template:
+          "one two three four"
+          "five . three four"
+          "six six six six"
+    /4fr 1fr 1fr 6fr
+  ;
+    li {
+      list-style: none;
+    }
+    a {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 32px;
+      text-transform: uppercase;
+      color: black;
+      &:hover {
+        color: $main-color;
+      }
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
+    &__one {
+      img {
+        max-height: 80px;
+        width: auto;
+      }
+      .socialMedia {
+        margin-top: 20px;
+      }
+      grid-area: one;
+    }
+    &__two {
+      grid-area: two;
+    }
+    &__three {
+      grid-area: three;
+    }
+    &__four {
+      .form {
+        margin: 0;
+        .sp-form-outer {
+          margin: 0;
+          flex: unset;
+          .sp-form {
+            padding: 0;
+          }
+          form {
+            column-gap: 5px;
+            grid-template:
+              'text text'
+              'theTwo theTwo'
+              'theThree theThree'
+              'theFour theFour'
+              'theLastOne theFive'
+              /1fr 2fr
+          ;
+            > div:nth-child(1) {
+              span, strong {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+                color: black;
+              }
+            }
+            > div:nth-child(5) {
+              span, a {
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 14px;
+                color: black;
+                text-transform: initial;
+              }
+            }
+          }
+        }
+        &__wrapper {
+          padding: 0;
+          background-color: transparent;
+          &:after {
+            content: none;
+          }
+        }
+      }
+      grid-area: four;
+    }
+    &__five {
+      grid-area: five;
+    }
+    &__six {
+      grid-area: six;
+      padding-right: 15%;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  footer {
+    .footer {
+      column-gap: 60px;
+      grid-template:
+          "one three four"
+          "two three four"
+          "five six six"
+    /3fr auto auto
+    ;
+      &__four {
+        .form {
+          .sp-form-outer {
+            form {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+          }
+        }
+      }
+      &__six {
+        padding: 0;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  footer {
+    .footer {
+      grid-template:
+          "one"
+          "two"
+          "three"
+          "four"
+          "five"
+          "six"
+  /1fr
+    ;
+      .logo {
+        max-width: 298px;
+      }
+      &__three {
+        a {
+          color: $main-color;
+        }
+      }
+      &__four {
+        .form {
+          .sp-form-outer {
+            form {
+              > div:nth-child(5) {
+                span, a {
+                  font-size: 7px;
+                  line-height: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__five, &__six {
+        span {
+          font-size: 10px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  footer {
+    .footer {
+      &__one {
+        img {
+          max-height: unset;
+          width: 100%;
+        }
+      }
+    }
+  }
 }

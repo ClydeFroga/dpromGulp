@@ -13,6 +13,7 @@
       justify-content: center;
       display: flex;
       img {
+        width: 100%;
         box-sizing: content-box;
         border: 5px solid white;
         max-width: 239px;
@@ -69,6 +70,71 @@
   }
 }
 
+.sidebarNewMag {
+  .newMagazine {
+    &__bottom {
+      padding: 20px 40px 20px 40px;
+      flex-direction: column;
+      &Img {
+        img {
+          width: 100%;
+        }
+        order: 2;
+        justify-content: flex-start;
+      }
+      &Text {
+        flex: unset;
+        order: 1;
+        height: unset;
+        span, a {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &:after {
+      bottom: 2%;
+      width: 86%;
+      left: 19px;
+    }
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .sidebarNewMag {
+    .newMagazine {
+      &__bottom {
+        padding: 10px 20px 10px 10px;
+        &Img {
+          img {
+            width: 100%;
+          }
+        }
+        &Text {
+          &Press, &Subscribe, &Archive {
+            font-size: 7px;
+          }
+          &Title {
+            font-size: 15px;
+          }
+          .button {
+            width: 70%;
+            height: 30px;
+          }
+          span, a {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      &:after {
+        left: 9px;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .newMagazine {
     &__bottom {
@@ -98,6 +164,7 @@
   .newMagazine {
     &__bottom {
       flex-direction: column;
+      align-items: center;
       &Img {
         order: 2;
         justify-content: flex-start;

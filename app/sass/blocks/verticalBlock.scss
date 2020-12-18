@@ -1,7 +1,7 @@
 .verticalBlock {
   flex: 0 0 55%;
   margin-right: 20px;
-  background-color: #FAFAFA;
+  background-color: $grey5;
   &Title {
     display: flex;
     font-weight: 600;
@@ -27,7 +27,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .verticalBlock {
     flex: 0 0 50%;
     &Title {
@@ -41,7 +41,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .verticalBlock {
     padding-bottom: 25px;
     margin-right: 0;

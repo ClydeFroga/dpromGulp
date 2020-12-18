@@ -1,0 +1,110 @@
+.part8 {
+  margin-top: 40px;
+
+  &__wrapper {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: 3fr 1fr;
+    &Left {
+      display: flex;
+      flex-direction: column;
+      &Top {
+        .horizontalBarFirst {
+          margin-right: 5%;
+        }
+      }
+      &Bot {
+        margin-top: 25px;
+        .horizontalBar {
+          display: grid;
+          gap: 15px;
+          grid-template-columns: repeat(2, 1fr);
+          > div {
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+    &Foxy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      > div:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .part8 {
+    &__wrapper {
+      grid-template-columns: 1fr;
+      &Left {
+        &Bot {
+          margin-top: 25px;
+          .horizontalBar {
+            .horizontalBar__RightTitle {
+              line-height: 12px !important;
+            }
+          }
+        }
+        &Top {
+          .horizontalBar__RightTitle {
+            font-size: 15px !important;
+          }
+          .horizontalBar__RightText {
+            font-size: 10px !important;
+          }
+        }
+      }
+      &Foxy {
+        display: grid;
+        column-gap: 3%;
+        grid-template-columns: repeat(auto-fill, 30%);
+        margin-top: 50px;
+        justify-content: space-between;
+        > div:not(:last-child) {
+          margin-bottom: unset;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .part8 {
+    &__wrapper {
+      grid-template-columns: 1fr;
+      &Left {
+        &Top {
+          .horizontalBar {
+            > div >div {
+              display: grid;
+              row-gap: 20px;
+              grid-template-columns: repeat(1, auto);
+              .imgBlock {
+                padding-top: 74.6%;
+              }
+            }
+            &__Right {
+              > a {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+        &Bot {
+          .horizontalBar {
+            grid-template-columns: repeat(1, 1fr);
+          }
+        }
+      }
+      &Foxy {
+        row-gap: 15px;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: space-between;
+      }
+    }
+  }
+}

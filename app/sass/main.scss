@@ -6,7 +6,8 @@
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
+  //width: 100%;
   height: auto;
 }
 .container {
@@ -17,7 +18,7 @@ img {
   margin-right: auto;
   margin-left: auto;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .container {
     padding-right: 40px;
     padding-left: 40px;
@@ -44,6 +45,7 @@ a {
 
 
 @import "blocks/header";
+@import "blocks/breadcrumbs";
 @import "blocks/footer";
 @import "blocks/socialMedia";
 @import "blocks/foxy";
@@ -54,8 +56,16 @@ a {
 @import "blocks/imgBlock";
 @import "blocks/titles";
 @import "blocks/slider";
+@import "blocks/loadmore";
+@import "blocks/pagination";
 @import "blocks/sections";
 @import "blocks/newMagazine";
+@import "blocks/sidebarNews";
+@import "blocks/blockWithoutImg";
+@import "blocks/inTrend";
+@import "blocks/aboutUs";
+@import "blocks/partnerMaterial";
+@import "blocks/oneBlockSide";
 @import "blocks/popular";
 @import "blocks/button";
 @import "blocks/form";
@@ -63,3 +73,11 @@ a {
 @import "blocks/part2";
 @import "blocks/part3";
 @import "blocks/part4";
+@import "blocks/part5";
+@import "blocks/part6";
+@import "blocks/part7";
+@import "blocks/part8";
+@import "blocks/events";
+@import "blocks/single";
+@import "blocks/journal";
+@import "blocks/rubric";
