@@ -59,5 +59,19 @@ function slider() {
       hide: false,
     },
   });
+  var sliderFive = new Swiper('#sliderFiveBlock', {
+    spaceBetween: 10,
+    slidesPerView: 1.3,
+
+    breakpoints: {
+      768: {
+        spaceBetween: 25,
+        slidesPerColumnFill: 'row',
+        slidesPerView: 3,
+        allowTouchMove: false,
+        slidesPerColumn: 2,
+      },
+    },
+  });
 }
 document.addEventListener('DOMContentLoaded', slider)

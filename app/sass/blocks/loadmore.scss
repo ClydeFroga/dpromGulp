@@ -12,12 +12,46 @@
   }
 }
 
+.loadmoreSpec {
+  cursor: pointer;
+  margin-top: 40px;
+  background-color: $grey4;
+  border: 1px solid $main-color;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  span {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.75px;
+    display: block;
+    color: $main-color;
+  }
+}
+
 @media (max-width: 1023px) {
   .loadmore{
     padding: 7px 20px;
     span {
       font-size: 10px;
       line-height: 12px;
+    }
+  }
+  .loadmoreSpec {
+    span {
+      font-size: 9px;
+      line-height: 11px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .loadmore{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    span {
+      font-size: 7px;
     }
   }
 }

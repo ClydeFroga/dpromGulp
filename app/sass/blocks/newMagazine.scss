@@ -160,6 +160,17 @@
     }
   }
 }
+@media (max-width: 767px) {
+  .sidebarNewMag {
+    .newMagazine {
+      &:after {
+        left: 13%;
+        bottom: 6%;
+        width: 71%;
+      }
+    }
+  }
+}
 @media (max-width: 576px) {
   .newMagazine {
     &__bottom {
@@ -184,12 +195,29 @@
       width: 100%;
     }
   }
+  .sidebarNewMag {
+    .newMagazine {
+      &:after {
+        left: 5%;
+        bottom: 5%;
+        width: 86%;
+      }
+    }
+  }
 }
 @media (max-width: 400px) {
   .newMagazine {
     &:after {
       bottom: 4%;
       width: 82%;
+    }
+  }
+  .sidebarNewMag {
+    .newMagazine {
+      &:after {
+        bottom: 2%;
+        width: 87%;
+      }
     }
   }
 }

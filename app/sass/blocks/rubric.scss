@@ -1,4 +1,7 @@
 .rubric {
+  display: flex;
+  flex-direction: column;
+  //gap: 25px;
   &__top{
     display: grid;
     column-gap: 30px;
@@ -32,6 +35,62 @@
       row-gap: 20px;
     }
   }
+  .slider {
+    margin-bottom: 60px;
+    .h2Title {
+      margin-bottom: 20px;
+    }
+  }
+  &__block1 {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 9fr 3fr;
+    .verticalBlock {
+      margin: 0;
+      background-color: transparent;
+    }
+    .horizontalBar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      .verticalBlock {
+        grid-row-start: 1;
+        grid-row-end: 6;
+        margin: 0;
+        padding: 0;
+        > div {
+          flex-direction: column;
+        }
+      }
+      >div:not(:first-child) {
+        .horizontalBarFirst {
+          flex: 0 0 22.4%;
+          padding-top: 17.3%;
+        }
+      }
+
+      &__RightTitle {
+        font-size: 10px;
+        line-height: 16px;
+        font-weight: normal;
+      }
+    }
+    &Foxy {
+      justify-self: flex-end;
+    }
+  }
+  &__block2 {
+    .part3:first-child {
+      margin-top: 0;
+      .horizontalBarFirst {
+        flex: 0 0 34%;
+        padding-top: 26.6%;
+      }
+    }
+  }
+  > div {
+    margin-bottom: 25px;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -57,7 +116,44 @@
         }
       }
     }
-
+    &__block1 {
+      grid-template-columns: 1fr 160px;
+      .horizontalBar {
+        grid-template-columns: 1fr;
+        .verticalBlock {
+          display: flex;
+          margin-bottom: 20px;
+          > a {
+            flex: 0 0 43%;
+            .imgBlock {
+              margin-bottom: 0;
+            }
+          }
+          &Block {
+            justify-content: center;
+            padding-top: 0;
+            > a {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            }
+          }
+          &Title {
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 15px;
+          }
+          &Text {
+            font-size: 9px;
+            line-height: 16px;
+          }
+          .dateAndViews {
+            padding-top: 5px;
+            border-top: 1px solid $grey4;
+          }
+        }
+      }
+    }
   }
 }
 @media (max-width: 767px) {
@@ -71,6 +167,36 @@
         ;
       .horizontalBar__RightText {
         display: none;
+      }
+      &Sidebar {
+        .sidebarNewMag {
+          display: none;
+        }
+        .sidebarNews {
+          display: none;
+        }
+      }
+    }
+    &__block1 {
+      grid-template-columns: 1fr;
+      .horizontalBar {
+        .verticalBlock {
+          display: block;
+          &Block {
+            padding: 20px 20px 0 20px;
+          }
+        }
+      }
+      &Foxy {
+        justify-self: center;
+      }
+    }
+    &__block2 {
+      .part3:first-child {
+        .horizontalBarFirst {
+          flex: 0 0 28%;
+          padding-top: 20.6%;
+        }
       }
     }
   }

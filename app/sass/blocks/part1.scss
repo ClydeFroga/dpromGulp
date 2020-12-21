@@ -35,7 +35,8 @@
         overflow-y: auto;
         border: 0.5px solid $grey4;
         .part1__leftLeftBlock {
-          a {
+          display: block;
+          span {
             font-size: 10px;
             line-height: 16px;
             letter-spacing: 0.4px;

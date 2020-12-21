@@ -1,0 +1,32 @@
+.foxyFBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  > div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .foxyFBlock {
+    //grid-column-start: 1;
+    //grid-column-end: 3;
+    display: grid;
+    column-gap: 3%;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 30%);
+    .foxyF {
+      margin: 0 !important;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .foxyFBlock {
+    //grid-column-start: 1;
+    //grid-column-end: 2;
+    row-gap: 15px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: space-between;
+  }
+}
+

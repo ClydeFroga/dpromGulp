@@ -124,23 +124,6 @@
       line-height: 16px !important;
     }
   }
-  //.firstBig.horizontalBar {
-  //  > div:first-child {
-  //    .horizontalBar__RightTitle {
-  //      font-size: 10px !important;
-  //    }
-  //  }
-  //  > div:not(:first-child) {
-  //    .horizontalBar__Right {
-  //      justify-content: space-around;
-  //      &Title {
-  //        font-size: 10px !important;
-  //        line-height: 16px !important;
-  //      }
-  //    }
-  //  }
-  //}
-
 }
 
 @media (max-width: 767px) {
@@ -182,6 +165,9 @@
     }
     > div:not(:first-child) {
       .horizontalBar__Right {
+        &Title {
+          font-weight: 600;
+        }
         .dateAndViews {
           flex-direction: column;
           .views {

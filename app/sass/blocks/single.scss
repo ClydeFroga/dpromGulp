@@ -207,10 +207,6 @@
         }
       }
       &Sharing {
-        margin-left: 15px;
-        margin-top: 30px;
-        border-top: 1px solid $grey4;
-        padding-top: 40px;
         display: flex;
         a {
           margin-right: 10px;
@@ -220,12 +216,17 @@
           color: $grey4;
         }
       }
+      hr {
+        border: 1px solid $grey4;
+        margin-bottom: 40px;
+      }
       &Journal {
-        margin: 20px 0 0 15px;
+        margin: 20px 0 0 0;
         padding: 10px 20px;
         background-color: $grey5;
+        //width: max-content;
         > span {
-          justify-content: space-between;
+          gap: 10px;
           display: flex;
           align-items: center;
           span {
@@ -388,8 +389,7 @@
         }
         &Journal {
           span {
-            font-size: 10px;
-            a {
+            a, span {
               font-size: 10px;
             }
           }
