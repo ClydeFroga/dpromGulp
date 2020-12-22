@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			block.classList.add('collapsed')
 			localStorage.setItem('topCollapsed', 'true')
 		}
-		console.log('!!!')
 	}
 
 	document.querySelector('.header__topButtons > span:last-child').addEventListener('click', collapse)
@@ -38,7 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		topHeader.classList.add('deleted')
 	}
 
-	document.querySelector('.header__topButtonsHidden').addEventListener('click', deleteTopHeader)
+	document.querySelector('.header__topButtonsHidden > span:last-child').addEventListener('click', deleteTopHeader)
+
+	function expandAgain() {
+		let block = document.querySelector('.header__container')
+		block.classList.remove('collapsed')
+		localStorage.removeItem('topCollapsed')
+
+		setTimeout(expand, 200)
+	}
+
+	document.querySelector('.header__topButtonsHidden > span:first-child').addEventListener('click', expandAgain)
 
 	function subMenu(menu, parent) {
 		parent.classList.toggle('open')

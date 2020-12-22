@@ -30,6 +30,7 @@
                 <span>Свернуть</span>
               </div>
               <div class="header__topButtonsHidden">
+                <span>Развернуть</span>
                 <span>Закрыть</span>
               </div>
             </div>
@@ -53,7 +54,7 @@
           document.querySelector('.header__container').classList.add('deleted')
         } else if(localStorage.getItem('topCollapsed') === 'true') {
           document.querySelector('.header__container').classList.add('collapsed')
-          document.querySelector('.header__topButtons span:last-child').style.display = 'none'
+          // document.querySelector('.header__topButtons span:last-child').style.display = 'none'
         }
 
       </script>

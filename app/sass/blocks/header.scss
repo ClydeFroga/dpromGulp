@@ -58,7 +58,7 @@
       .header__topButtonsHidden {
         cursor: pointer;
         margin-top: 15px;
-        display: block;
+        display: flex;
         position: absolute;
         right: 0;
         margin-right: 15px;
@@ -76,9 +76,20 @@
             margin-right: 10px;
             content:'';
             width: 20px;
-            height: 20px;
-            background: url('../../images/dist/close.svg') no-repeat;
             background-size: cover;
+          }
+        }
+        span:first-child {
+          margin-right: 15px;
+          &:before {
+            height: 10px;
+            background: url('../../svg/assets/arrowToggle.svg') no-repeat;
+          }
+        }
+        span:last-child {
+          &:before {
+            height: 20px;
+            background: url('../../images/dist/close2.svg') no-repeat;
           }
         }
 
