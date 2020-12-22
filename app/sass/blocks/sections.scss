@@ -7,21 +7,42 @@
     column-gap: 25px;
     grid-template-columns: repeat(3, 1fr);
     &Block {
+      cursor: pointer;
       padding: 25px 0;
       background-color: $grey5;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-weight: bold;
-      font-size: 10px;
-      line-height: 16px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: $main-color;
+      span {
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: $main-color;
+      }
       svg {
+        color: $main-color;
         margin-right: 100px;
         max-height: 60px;
         max-width: 60px;
+      }
+    }
+    &Block.filtered {
+      background-color: $grey4;
+      position: relative;
+      span {
+        color: $grey2;
+      }
+      svg {
+        color: $grey2;
+      }
+      &:after {
+        content: url("../svg/assets/close.svg");
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 5%;
       }
     }
     &Block:nth-child(5) {
@@ -32,14 +53,19 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .sections {
     &__blocks {
       &Block {
+        display: flex;
+        span {
+          font-size: 7px;
+        }
         padding: 25px 10px;
         justify-content: space-around;
-        font-size: 7px;
+
         svg {
+          flex:  0 0 30%;
           margin-right: 10px;
         }
       }

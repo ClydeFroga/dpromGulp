@@ -1,3 +1,240 @@
 .journal {
+  &__block1 {
+    display: grid;
+    align-items: flex-start;
+    row-gap: 40px;
+    column-gap: 20px;
+    grid-template:
+    "breadcrumbs sidebar"
+    "leftTop sidebar"
+    "Sections sidebar"
+    "news sidebar"
+  /1fr 300px;
+    .breadcrumbs {
+      grid-area: breadcrumbs;
+      margin-bottom: 0;
+    }
 
+    &LeftTop {
+      grid-area: leftTop;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      .horizontalBar {
+        >div:not(:last-child) {
+          padding-bottom: 7px;
+          margin-bottom: 7px;
+        }
+        > div {
+          > div {
+            padding: 15px 40px;
+            a {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &LeftSections {
+      grid-area: Sections;
+      .sections {
+        margin-top: 0;
+        &__blocks {
+          margin-top: 0;
+        }
+      }
+      svg {
+        margin-right: 30px !important;
+      }
+      span {
+        width: 125px;
+      }
+  }
+    &LeftNews {
+      grid-area: news;
+
+      &Categories {
+        display: none;
+        justify-content: space-between;
+        border-bottom: 1px solid $grey2;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        &.disp {
+          display: flex;
+        }
+        #blockCat {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 25px;
+          span {
+            text-transform: lowercase;
+            color: $grey2;
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
+        > span {
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+          color: $main-color;
+        }
+      }
+    }
+    &Sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      grid-area: sidebar;
+    }
+  }
+  .filterBlock {
+    .horizontalBar {
+      .imgBlock {
+        flex: 0 0 23%;
+        padding-top: 17.6%;
+      }
+    }
+    &.filtered {
+      .horizontalBar {
+        > div:not(.filtered) {
+          opacity: .3;
+        }
+      }
+    }
+  }
+  &__block2 {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    &Foxy {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .journal {
+    &__block1 {
+      grid-template:
+    "breadcrumbs sidebar"
+    "leftTop sidebar"
+    "Sections sidebar"
+    "news sidebar"
+  /1fr 160px;
+      &LeftTop {
+        grid-template-columns: 1fr;
+        .horizontalBar {
+          column-gap: 15px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      &LeftSections {
+        svg {
+          margin-right: 10px !important;
+        }
+        span {
+          max-width: 125px;
+        }
+      }
+      &LeftNews {
+
+        &Categories {
+          #blockCat {
+            span {
+              font-size: 7px;
+            }
+          }
+          > span {
+            font-size: 7px;
+          }
+        }
+      }
+    }
+    .filterBlock {
+      .horizontalBar {
+        .imgBlock {
+          flex: 0 0 23%;
+          padding-top: 17.6%;
+        }
+      }
+    }
+    &__block2 {
+      grid-template-columns: 1fr 160px;
+      &Foxy {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .journal {
+    &__block1 {
+      grid-template:
+    "breadcrumbs"
+    "leftTop"
+    "sidebar"
+    "Sections"
+    "news"
+  /1fr;
+      &LeftTop {
+        .horizontalBar {
+          column-gap: 15px;
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .popular {
+          &__hidden {
+            display: flex;
+          }
+          .horizontalBar {
+            overflow: hidden;
+          }
+          .horizontalBar.hidden {
+            height: 0;
+          }
+        }
+      }
+      .sections__blocks {
+        grid-template-columns: 1fr;
+        svg {
+          margin-right: 0 !important;
+        }
+        span {
+          text-align: left;
+          display: block;
+        }
+        &Block {
+          //justify-content: center;
+        }
+      }
+      &Sidebar {
+        .sidebarNews {
+          display: none;
+        }
+      }
+
+    }
+    .filterBlock {
+      .horizontalBar {
+        &__RightText {
+          display: none;
+        }
+      }
+    }
+    &__block2 {
+      grid-template-columns: 1fr ;
+      &Foxy {
+        margin-top: 30px;
+      }
+    }
+  }
 }

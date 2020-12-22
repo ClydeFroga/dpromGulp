@@ -22,4 +22,40 @@
      }
     }
   }
+  &__hidden {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    cursor: pointer;
+    display: none;
+    justify-content: space-between;
+    span {
+      font-weight: bold;
+      font-size: 10px;
+      line-height: 10px;
+      color: $main-color;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    span:last-child {
+      content: url("../../svg/assets/arrowDown.svg");
+      transform: scale(1, -1);
+    }
+    .popular__hiddenUnvis {
+      display: none;
+    }
+  }
+  &.open {
+    .popular__hiddenUnvis {
+      display: block;
+    }
+    .popular__hiddenVis {
+      display: none;
+    }
+    span:last-child {
+      transform: scale(1, 1);
+    }
+    .horizontalBar {
+      display: none;
+    }
+  }
 }

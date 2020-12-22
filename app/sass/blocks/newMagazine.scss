@@ -3,6 +3,9 @@
   flex-direction: column;
   position: relative;
   background: linear-gradient(180deg, rgba(196, 196, 196, 0) 6.77%, rgba(196, 196, 196, 0.71) 100%);
+  .h2Title {
+    z-index: 2;
+  }
   &__bottom {
     margin: auto;
     padding: 20px 25px 25px 25px;
@@ -27,7 +30,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      &Press, &Subscribe, &Archive {
+      &Press, &Subscribe, &Archive, &Detail {
         font-weight: bold;
         font-size: 10px;
         line-height: 16px;
@@ -56,18 +59,6 @@
     background-size: contain;
     background-position: bottom;
   }
-  &:after {
-    content: '';
-    background: url("../svg/assets/middleСircle.svg") no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    width: 46%;
-    height: 100%;
-    bottom: 30px;
-    left: 25px;
-    position: absolute;
-    z-index: 0;
-  }
 }
 
 .sidebarNewMag {
@@ -91,18 +82,60 @@
         }
       }
     }
-    &:after {
-      bottom: 2%;
-      width: 86%;
-      left: 19px;
-    }
     &:before {
       width: 100%;
     }
   }
 }
 
+.journalPage {
+  .newMagazine {
+    .h2Title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      text-transform: none;
+    }
+    &__bottom {
+      flex-direction: column;
+      gap: 20px;
+      &Text {
+        padding: 0 20%;
+        gap: 15px;
+      }
+    }
+    &:before {
+      top: 0;
+      bottom: unset;
+      width: 100%;
+      height: 100%;
+      max-height: 443px;
+      left: -18px;
+    }
+  }
+}
+
 @media (max-width: 1023px) {
+  .newMagazine {
+    &__bottom {
+      &Img {
+        flex: 0 0 40%;
+      }
+      &Text {
+        &Press, &Subscribe, &Archive, &Detail {
+          font-size: 7px;
+        }
+        &Title {
+          font-size: 15px;
+          line-height: 20px;
+        }
+        .button {
+          width: 70%;
+          height: 30px;
+        }
+      }
+    }
+  }
   .sidebarNewMag {
     .newMagazine {
       &__bottom {
@@ -128,49 +161,33 @@
           }
         }
       }
-      &:after {
-        left: 9px;
+    }
+  }
+  .journalPage {
+    .newMagazine {
+      .h2Title {
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 32px;
+        text-transform: uppercase;
+      }
+      &__bottom {
+        flex-direction: row;
+        &Text {
+          flex:  0 0 40%;
+          padding: 0;
+        }
+      }
+      &:before {
+        top: unset;
+        bottom: 0;
+        width: 55%;
+        left: 0;
       }
     }
   }
 }
 
-@media (max-width: 768px) {
-  .newMagazine {
-    &__bottom {
-      &Img {
-        flex: 0 0 40%;
-      }
-      &Text {
-        &Press, &Subscribe, &Archive {
-          font-size: 7px;
-        }
-        &Title {
-          font-size: 15px;
-        }
-        .button {
-          width: 70%;
-          height: 30px;
-        }
-      }
-    }
-    &:after {
-      bottom: 10px;
-      left: 10px;
-    }
-  }
-}
-@media (max-width: 767px) {
-  .sidebarNewMag {
-    .newMagazine {
-      &:after {
-        left: 13%;
-        bottom: 6%;
-        width: 71%;
-      }
-    }
-  }
-}
 @media (max-width: 576px) {
   .newMagazine {
     &__bottom {
@@ -186,38 +203,8 @@
         height: 220px;
       }
     }
-    &:after {
-      bottom: 5%;
-      width: 85%;
-      left: 35px;
-    }
     &:before {
       width: 100%;
-    }
-  }
-  .sidebarNewMag {
-    .newMagazine {
-      &:after {
-        left: 5%;
-        bottom: 5%;
-        width: 86%;
-      }
-    }
-  }
-}
-@media (max-width: 400px) {
-  .newMagazine {
-    &:after {
-      bottom: 4%;
-      width: 82%;
-    }
-  }
-  .sidebarNewMag {
-    .newMagazine {
-      &:after {
-        bottom: 2%;
-        width: 87%;
-      }
     }
   }
 }

@@ -109,6 +109,9 @@
 
     .sliderBackground__SmallText {
       bottom: 50%;
+      &Title {
+        margin-bottom: 10px;
+      }
     }
     .sliderBackground__SmallHidden {
       bottom: 0;
