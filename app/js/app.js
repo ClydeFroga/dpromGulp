@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			block.classList.remove('expanded')
 			let bot = document.querySelector('.header__bot')
 			bot.style.marginTop = `65px`;
+			let but = document.querySelector('.header__topButtons span:first-child')
+			but.style.display = 'block'
+			setTimeout(() => but.style.opacity = '1', 100)
 		} else {
 			block.classList.add('collapsed')
 			localStorage.setItem('topCollapsed', 'true')
