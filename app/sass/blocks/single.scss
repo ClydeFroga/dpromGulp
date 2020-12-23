@@ -295,8 +295,16 @@
         &Thumbs {
           display: flex;
           svg {
+            cursor: pointer;
             width: 17px;
             height: 16px;
+            color: white;
+            &:first-child {
+              margin-right: 10px;
+            }
+            &:hover {
+              color: $main-color;
+            }
           }
         }
       }
@@ -422,7 +430,6 @@
       "sidebar"
       /1fr
     ;
-      //grid-template-columns: 1fr;
       &Left {
         .single__contentSticky {
           display: none;
