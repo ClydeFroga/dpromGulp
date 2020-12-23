@@ -338,7 +338,7 @@
       /1fr 300px
       ;
       &Left {
-        .single__contentSticky {
+         .single__contentSticky {
           margin: 0 0 20px 20px;
           display: block;
           float: right;
@@ -411,7 +411,7 @@
   }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 767px) {
   .single {
     margin-top: 30px;
     &__content {
@@ -436,6 +436,9 @@
             line-height: 24px;
           }
           .single__contentStickyBlock {
+            max-width: unset;
+            width: 100%;
+            float: none;
             padding: 20px 40px;
             > div {
               justify-content: flex-start;

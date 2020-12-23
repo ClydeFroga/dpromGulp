@@ -4,7 +4,7 @@
   }
   .horizontalBar {
     > div {
-      > div {
+      > a {
         background-color: $grey5;
         .horizontalBarFirst {
           flex: 0 0 29%;
@@ -13,12 +13,11 @@
       }
     }
     &__Right {
-     > a {
+     > span {
        font-weight: 600;
        font-size: 14px;
        line-height: 20px;
        letter-spacing: 0.25px;
-       margin-bottom: 10px;
      }
     }
   }

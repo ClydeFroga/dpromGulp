@@ -1,7 +1,7 @@
 .partnerMaterial {
-  border: 1px solid $main-color;
+  border: 1px solid $main-color !important;
   background-color: $grey5;
-  padding: 12px;
+  padding: 12px !important;
   margin: 0 -12px;
   .horizontalBar__Right {
     width: 100%;
@@ -32,8 +32,6 @@
 @media (max-width: 1023px) {
   .partnerMaterial {
     &__info {
-      font-size: 7px !important;
-      line-height: 16px !important;
       padding: 7px 12px;
     }
     &__upper {

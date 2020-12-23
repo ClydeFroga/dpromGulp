@@ -1,11 +1,21 @@
 .inTrend {
   &__block {
     display: grid;
-    grid-template-columns: 5fr 5fr 3fr;
+    grid-template-columns: 10fr 3fr;
     column-gap: 20px;
-    .blockWithoutImg__Block:not(:last-child) {
+    .blockWithoutImg {
+      display: grid;
+      grid-template-columns: 5fr 5fr;
+      column-gap: 20px;
+    }
+    .blockWithoutImg__Block:not(:nth-child(n+5)) {
       margin: 0 0 15px 0;
       padding: 0 0 15px 0;
+    }
+    .blockWithoutImg__Block:nth-child(n+5) {
+      margin: 0;
+      padding: 0;
+      border: none;
     }
   }
 }
@@ -14,10 +24,10 @@
   .inTrend {
     &__block {
       row-gap: 45px;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       .foxyFBlock {
         grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column-end: 2;
       }
     }
   }
@@ -25,12 +35,15 @@
 @media (max-width: 767px) {
   .inTrend {
     &__block {
-      grid-template-columns: 1fr;
-      .foxyFBlock {
-        grid-column-start: 1;
-        grid-column-end: 2;
+      .blockWithoutImg {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 20px;
       }
-      .blockWithoutImg:nth-child(2) {
+      .blockWithoutImg__Block:nth-child(3) {
+        margin: 0;
+      }
+      .blockWithoutImg__Block:nth-child(n+4) {
         display: none;
       }
     }

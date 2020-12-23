@@ -77,22 +77,10 @@
             content:'';
             width: 20px;
             background-size: cover;
-          }
-        }
-        span:first-child {
-          margin-right: 15px;
-          &:before {
             height: 10px;
             background: url('../../svg/assets/arrowToggle.svg') no-repeat;
           }
         }
-        span:last-child {
-          &:before {
-            height: 20px;
-            background: url('../../images/dist/close2.svg') no-repeat;
-          }
-        }
-
       }
     }
   }
@@ -213,8 +201,12 @@
       line-height: 16px;
       align-items: center;
       letter-spacing: 0.4px;
+      a {
+        color: $main-color;
+        text-decoration: underline;
+      }
     }
-    a {
+    &Button {
       max-height: 44px;
       display: flex;
       align-items: center;
@@ -413,7 +405,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .header {
     .toggler {
       align-self: center;
@@ -612,6 +604,8 @@
       align-self: center;
     }
     .header__botBottom.expanded {
+      margin: 30px -20px;
+      padding: 15px 20px;
       flex-direction: column;
       .header__botBottomHidden {
         order: 3;
@@ -653,6 +647,28 @@
           grid-template-columns: repeat(1, auto);
         }
       }
+    }
+    &__hidden {
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      p {
+        margin: 15px 0;
+      }
+      &Button {
+        max-width: max-content;
+      }
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  .header {
+    .header__botBottom.expanded {
+      margin: 30px -5px;
+      padding: 15px 5px;
     }
   }
 }

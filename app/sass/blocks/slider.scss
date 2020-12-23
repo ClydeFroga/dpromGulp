@@ -28,9 +28,10 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.4px;
+    display: block;
+    margin-bottom: 15px;
   }
   .dateAndViews {
-    margin-top: 15px;
     justify-content: space-between;
     .category {
       margin: 0;
@@ -125,14 +126,17 @@
     &__Small {
       &Text {
         padding: 20px 10% 20px 25px;
-        &Title  {
+
+        &Title {
           font-size: 8px;
           line-height: 10px;
         }
       }
+
       &Hidden {
         padding: 20px 10% 20px 25px;
         margin-top: 10px;
+
         span {
           font-size: 7px;
           line-height: 10px;
@@ -140,13 +144,10 @@
       }
     }
   }
-}
-
-@media (max-width: 768px) {
   .sliderBigOne {
     &__title {
       font-size: 8px;
-      line-height: 10px;
+      line-height: 14px;
     }
   }
 }
@@ -166,7 +167,7 @@
     &__Small {
       &Text {
         &Title {
-          padding: 10px 15px;
+          padding: 0;
           font-size: 9px;
           line-height: 12px;
         }
@@ -174,6 +175,12 @@
       &Hidden {
         padding: 10px 15px;
       }
+    }
+  }
+  .sliderBigOne {
+    &__title {
+      font-size: 10px;
+      line-height: 14px;
     }
   }
 }

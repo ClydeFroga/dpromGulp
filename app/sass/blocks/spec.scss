@@ -88,6 +88,11 @@
         }
       }
     }
+    &Blocks.allVisible {
+      .spec__block2BlocksSingle {
+        display: block;
+      }
+    }
     &Foxy {
       display: flex;
       flex-direction: column;
@@ -146,7 +151,7 @@
       &Blocks {
         column-gap: 12px;
         grid-template-columns: repeat(3, 1fr);
-        > div:nth-child(n + 7) {
+        > a:nth-child(n + 7) {
           display: none;
         }
         &Single {
@@ -209,7 +214,7 @@
       }
       &Blocks {
         grid-template-columns: repeat(2, 1fr);
-        > div:nth-child(n + 5) {
+        > a:nth-child(n + 5) {
           display: none;
         }
       }

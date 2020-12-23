@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
-    > a {
+    > span {
       font-weight: normal;
       font-size: 12px;
       line-height: 16px;
@@ -50,39 +50,47 @@
     justify-content: center;
   }
 }
+
 .horizontalBar.textAround {
   .horizontalBar__Right {
     justify-content: space-around;
   }
 }
+
 .firstBig.horizontalBar {
-  > div:first-child {
-    .horizontalBarFirst {
-      flex: 0 0 43%;
-      padding-top: 32.6%;
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  > .verticalBlock {
     .horizontalBar__RightText {
       font-size: 10px;
       padding-bottom: 15px;
       border-bottom: 1px solid $grey4;
     }
-    margin-bottom: 30px;
+    margin: 0;
+    padding: 0;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    > a {
+      flex-direction: column;
+    }
   }
   > div:not(:first-child) {
     .horizontalBarFirst {
-      flex: 0 0 17%;
-      padding-top: 12.6%;
+      flex: 0 0 22.4%;
+      padding-top: 17.3%;
     }
     .horizontalBar__Right {
       justify-content: space-around;
       &Title {
-        font-weight: normal;
         font-size: 10px;
         line-height: 16px;
+        font-weight: normal;
       }
     }
   }
 }
+
 .firstBorder.horizontalBar {
   > div {
     padding: 15px 15px 20px 15px;
@@ -111,7 +119,7 @@
 
 @media (max-width: 1023px) {
   .horizontalBar {
-    &__Right > a {
+    &__Right > span {
       font-size: 8px !important;
       line-height: 10px !important;
     }
@@ -123,6 +131,41 @@
       font-size: 7px !important;
       line-height: 16px !important;
     }
+  }
+
+  .firstBig.horizontalBar {
+    grid-template-columns: 1fr;
+    > .verticalBlock {
+      margin-bottom: 20px;
+      > a {
+        display: grid;
+        grid-template-columns: .77fr 1fr;
+        flex: 0 0 100%;
+        .imgBlock {
+          margin-bottom: 0;
+        }
+      }
+      .verticalBlockBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-top: 0;
+      }
+      .verticalBlockTitle {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 15px;
+      }
+      .verticalBlockText {
+        font-size: 9px;
+        line-height: 16px;
+      }
+      .dateAndViews {
+        padding-top: 5px;
+        border-top: 1px solid $grey4;
+      }
+    }
+
   }
 }
 
@@ -143,24 +186,22 @@
       }
     }
   }
+
   .horizontalBar.textAround {
     .horizontalBar__Right {
       justify-content: center;
       gap: 10px;
     }
   }
+
   .firstBig.horizontalBar {
-    > div:first-child {
-      > div {
-        flex-direction: column;
-        .horizontalBarFirst {
-          padding-top: 74.6%;
-          margin-right: 0;
-          margin-bottom: 20px;
-        }
+    .verticalBlock {
+      display: block;
+      .verticalBlockBlock {
+        padding: 20px 20px 0 20px;
       }
-      .horizontalBar__RightTitle {
-        font-size: 10px !important;
+      > a {
+        grid-template-columns: 1fr;
       }
     }
     > div:not(:first-child) {

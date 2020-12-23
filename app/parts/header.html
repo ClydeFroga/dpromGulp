@@ -31,7 +31,6 @@
               </div>
               <div class="header__topButtonsHidden">
                 <span>Развернуть</span>
-                <span>Закрыть</span>
               </div>
             </div>
         </div>
@@ -39,9 +38,9 @@
         <div class="header__hidden">
           <div class="container">
             <p>
-              Что ж, господа, вот такой он, 2020 год: никакой определённости. Весной опасения о судьбе MiningWorld Russia всё-таки сбылись: в апреле запланированная выставка не состоялась. Добро ещё, что не отменили, а только перенесли.
+              Что ж, <a href="#">господа</a>, вот такой он, 2020 год: никакой определённости. Весной опасения о судьбе MiningWorld Russia всё-таки сбылись: в апреле запланированная выставка не состоялась. Добро ещё, что не отменили, а только перенесли.
             </p>
-            <a href="#">
+            <a class="header__hiddenButton" href="#">
               Подробнее
             </a>
           </div>
@@ -50,13 +49,9 @@
       </div>
 
       <script>
-        if(localStorage.getItem('topDeleted') === 'true') {
-          document.querySelector('.header__container').classList.add('deleted')
-        } else if(localStorage.getItem('topCollapsed') === 'true') {
+         if(localStorage.getItem('topCollapsed') === 'true') {
           document.querySelector('.header__container').classList.add('collapsed')
-          // document.querySelector('.header__topButtons span:last-child').style.display = 'none'
         }
-
       </script>
 
       <div class="container header__bot">
