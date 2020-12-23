@@ -114,6 +114,10 @@
       flex-direction: column;
       gap: 20px;
     }
+    .loadmore {
+      margin-top: 20px;
+      margin-left: 25%;
+    }
   }
 }
 
@@ -225,15 +229,26 @@
     }
     .filterBlock {
       .horizontalBar {
+        .horizontalBar__Right {
+          gap: 0;
+        }
         &__RightText {
           display: none;
+        }
+        .horizontalBarFirst  {
+          flex: 0 0 27%;
+          padding-top: 20.6%;
         }
       }
     }
     &__block2 {
       grid-template-columns: 1fr ;
+
       &Foxy {
         margin-top: 30px;
+      }
+      .loadmore {
+        margin-left: 0;
       }
     }
   }

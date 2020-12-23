@@ -188,6 +188,23 @@
   }
 }
 
+@media (max-width: 767px) {
+  .journalPage {
+    .newMagazine {
+      &__bottom {
+        flex-direction: column;
+        &Img {
+          order: 1;
+        }
+        &Text {
+          padding: 0 10%;
+          order: 2;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 576px) {
   .newMagazine {
     &__bottom {
