@@ -20,6 +20,14 @@
       right: 0;
       z-index: 0;
     }
+    &:before {
+      content: url("../images/dist/corner.png");
+      transform: scale(-1, -1);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+    }
   }
   .sp-form-outer {
     margin-left: 30px;

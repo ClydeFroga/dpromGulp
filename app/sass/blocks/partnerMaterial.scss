@@ -11,6 +11,9 @@
     color: white !important;
     padding: 10px 15px;
     background-color: $brown3;
+    &:hover {
+      background-color: $main-color;
+    }
   }
   &__hidden {
     display: none !important;

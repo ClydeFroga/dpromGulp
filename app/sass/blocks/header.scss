@@ -2,12 +2,6 @@
   &__container {
     height: 180px;
   }
-  &__container.deleted {
-    display: none;
-  }
-  &__container.deleted ~ .header__bot {
-    margin-top: 65px;
-  }
   &__container.expanded {
     //margin-bottom: 65px;
     .header__hidden {
@@ -15,13 +9,19 @@
     }
   }
   &__container.collapsed {
-    margin-bottom: 65px;
-    height: auto;
+    height: 0;
     .header__hidden {
       display: none;
     }
+    .header__top.one {
+      background: $main-color;
+    }
+    .header__top.two {
+      background: $brown3;
+    }
     .header__top {
-      height: 50px;
+      position: relative;
+      height: 0;
       background: linear-gradient(180deg, #FFB240 0%, #FF9900 76.04%);
       .header__topSpec {
         opacity: 0;
@@ -84,7 +84,13 @@
       }
     }
   }
-
+  &__container.collapsed {
+    height: 50px;
+    .header__top.release {
+      transition: .3s;
+      height: 50px;
+    }
+  }
   &__top {
     background: url(../../images/dist/header.jpg) no-repeat;
     width: 100%;

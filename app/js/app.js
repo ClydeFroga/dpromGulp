@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		let but = document.querySelector('.header__topButtons span:first-child')
 		let bot = document.querySelector('.header__bot')
 		let hiddenHeight = document.querySelector('.header__hidden').scrollHeight
+		let top = document.querySelector('.header__top')
 
+		top.classList.remove('release')
 		bot.style.marginTop = `${hiddenHeight + 30}px`;
 		but.style.opacity = '0';
 		setTimeout(() => but.style.display = 'none', 500)
@@ -18,15 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function collapse() {
 		let block = document.querySelector('.header__container')
+		let top = document.querySelector('.header__top')
+
 		if(block.classList.contains('expanded')) {
 			block.classList.remove('expanded')
 			let bot = document.querySelector('.header__bot')
-			bot.style.marginTop = `65px`;
+			bot.style.marginTop = ``;
 			let but = document.querySelector('.header__topButtons span:first-child')
 			but.style.display = 'block'
 			setTimeout(() => but.style.opacity = '1', 100)
 		} else {
 			block.classList.add('collapsed')
+			setTimeout(() => top.classList.add('release'), 100)
 			localStorage.setItem('topCollapsed', 'true')
 		}
 	}
