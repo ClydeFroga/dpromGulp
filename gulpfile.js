@@ -14,17 +14,18 @@ const newer        = require('gulp-newer')
 const rsync        = require('gulp-rsync')
 const del          = require('del')
 
-
 function svg() {
-	return src('**/*.svg', { cwd: 'app/svg/assets' })
+	return src('**/*.svg', { cwd: 'app/sass/svg/assets' })
 		.pipe(svgSprite({
 				mode: {
 					symbol: true // Activate the «symbol» mode
 				}
-		}
+			}
 		))
-		.pipe(dest('app/svg/out'));
+		.pipe(dest('app/sass/svg/out'));
 }
+
+
 
 
 function browsersync() {
@@ -61,6 +62,7 @@ function scripts() {
 		})
 		.pipe(rename('app.min.js'))
 		.pipe(dest('app/js'))
+		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\js"))
 		.pipe(browserSync.stream())
 }
 
@@ -68,16 +70,17 @@ function styles() {
 	return src('app/sass/main.scss')
 		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(autoprefixer({ grid: 'autoplace' }))
-		.pipe(rename('app.min.css'))
-		.pipe(dest('app/css'))
+		.pipe(rename('style.css'))
+		.pipe(dest('app/sass'))
+		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3"))
 		.pipe(browserSync.stream())
 }
 
 function images() {
 	return src(['app/images/src/**/*'])
-		.pipe(newer('app/images/dist'))
+		.pipe(newer('app/sass/img'))
 		.pipe(imagemin())
-		.pipe(dest('app/images/dist'))
+		.pipe(dest('app/sass/img'))
 		.pipe(browserSync.stream())
 }
 
@@ -88,7 +91,7 @@ function buildcopy() {
 		'!app/images/src/**/*',
 		'app/fonts/**/*'
 	], { base: 'app/' })
-	.pipe(dest('dist'))
+		.pipe(dest('dist'))
 }
 
 async function buildhtml() {
@@ -117,8 +120,8 @@ function deploy() {
 }
 
 function startwatch() {
-	watch('app/svg/assets/*', { usePolling: true }, svg)
-	watch('app/sass/**/*', { usePolling: true }, styles)
+	watch('app/sass/svg/assets/*', { usePolling: true }, svg)
+	watch('app/sass/**/*.scss', { usePolling: true }, styles)
 	watch(['app/js/**/*.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
 	watch('app/images/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
 	watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)

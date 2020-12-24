@@ -8,8 +8,17 @@
     text-transform: uppercase;
     color: $grey1;
     background-color: $grey5;
+    transition: 0s;
+    &:hover {
+      padding: 15px;
+      border: 1px solid $main-color;
+    }
   }
   span.current {
     background-color: $brown3;
+    &:hover {
+      padding: 16px;
+      border: none;
+    }
   }
 }

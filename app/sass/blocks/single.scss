@@ -68,7 +68,7 @@
             padding-top: 20px;
             display: flex;
             justify-content: flex-end;
-            content: url("../svg/assets/blockquote.svg");
+            content: url("svg/assets/blockquote.svg");
           }
         }
         .wp-block-image:not(.forBlockquote) {
@@ -99,7 +99,7 @@
             position: absolute;
             top: -25px;
             left: 4%;
-            content: url("../svg/assets/likeBlockquote.svg");
+            content: url("svg/assets/likeBlockquote.svg");
           }
         }
         .forBlockquote {
@@ -189,7 +189,7 @@
           li:before {
             position: absolute;
             left: 15px;
-            content: url("../svg/assets/spisok.svg");
+            content: url("svg/assets/spisok.svg");
           }
         }
         ol {

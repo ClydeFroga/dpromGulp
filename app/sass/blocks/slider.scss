@@ -10,7 +10,7 @@
     .swiper-scrollbar-drag {
       position: relative;
       &:after {
-        background-image: url("../../svg/assets/SliderDrag.svg");
+        background-image: url("svg/assets/SliderDrag.svg");
         content: '';
         position: absolute;
         top: 30%;

@@ -108,7 +108,7 @@
   position: relative;
   display: inline-block;
   > a:after {
-    content: url("../svg/assets/arrowDown.svg");
+    content: url("svg/assets/arrowDown.svg");
     width: 10px;
     height: 5px;
     margin-left: 5px;
@@ -125,7 +125,7 @@
     }
   }
   > a:after {
-    content: url("../svg/assets/arrowUp.svg");
+    content: url("svg/assets/arrowUp.svg");
   }
 }
 
@@ -161,7 +161,7 @@
   background-color: transparent;
   cursor: pointer;
   &:before {
-    content: url("../images/dist/menu.svg");
+    content: url("svg/assets/menu.svg");
   }
 }
 
@@ -262,7 +262,7 @@
               background-color: white;
             }
             > a:after {
-              background-image:  url(../svg/assets/arrowToggleDown.svg);
+              background-image:  url('svg/assets/arrowToggleDown.svg');
             }
           }
           .dropdown > a:after {
@@ -272,7 +272,7 @@
             height: 7px;
             display: inline-flex;
             align-items: center;
-            background-image:  url(../svg/assets/arrowToggle.svg);
+            background-image:  url('svg/assets/arrowToggle.svg');
             background-repeat: no-repeat;
             background-size: cover;
             content: '';

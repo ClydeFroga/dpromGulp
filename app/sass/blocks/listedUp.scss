@@ -5,8 +5,8 @@
   align-items: center;
   cursor: pointer;
   position: fixed;
-  top: 60%;
-  right: 5px;
+  bottom: 15px;
+  right: 0;
   border-radius: 50%;
   z-index: 3;
   width: 52px;
@@ -31,11 +31,6 @@
   opacity: 1;
 }
 
-@media (min-width: 1800px) {
-  .listedUp {
-    right: 12%;
-  }
-}
 @media (max-width: 1024px) {
   .listedUp {
     display: none;

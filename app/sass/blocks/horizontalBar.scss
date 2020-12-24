@@ -95,16 +95,20 @@
 .firstBorder.horizontalBar {
   > div {
     padding: 15px 15px 20px 15px;
-  }
-  > div:first-of-type {
-    border: 1px solid $grey4;
-  }
-  > div:not(:first-of-type) {
     border-bottom: 1px solid $grey4;
+    transition: 0s;
+    &:hover {
+      padding: 14px 14px 20px 14px;
+      border: 1px solid $grey4;
+    }
   }
   > div:last-of-type {
     border-bottom: none;
     padding-bottom: 15px;
+    &:hover {
+      border: 1px solid $grey4;
+      padding: 14px;
+    }
   }
   .horizontalBar__Right {
     gap: 15px;
