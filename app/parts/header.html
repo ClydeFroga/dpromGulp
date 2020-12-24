@@ -48,17 +48,7 @@
 
       </div>
 
-      <script>
-         if(localStorage.getItem('topCollapsed') === 'true') {
-           document.querySelector('.header__container').classList.add('collapsed')
-
-           let o = ['', 'one', 'two']
-           let r = Math.floor(Math.random() * (3 - 0)) + 0;
-           let p = document.querySelector('.header__top')
-           p.classList.add(`${o[r]}`)
-           p.classList.add(`release`)
-        }
-      </script>
+      <script src="js/localStorage.js"></script>
 
       <div class="container header__bot">
 

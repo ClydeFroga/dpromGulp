@@ -221,20 +221,15 @@
         margin-bottom: 40px;
       }
       &Journal {
+        flex-wrap: wrap;
         margin: 20px 0 0 0;
         padding: 10px 20px;
         background-color: $grey5;
-        //width: max-content;
-        > span {
-          gap: 10px;
-          display: flex;
-          align-items: center;
+        gap: 10px;
+        display: flex;
+        align-items: center;
           span {
             font-size: 14px;
-          }
-          svg {
-            width: 26px;
-            height: 26px;
           }
           a {
             font-weight: bold;
@@ -242,7 +237,7 @@
             color: $main-color;
             text-decoration: underline;
           }
-        }
+
       }
       .single__contentSticky {
         display: none;
@@ -396,10 +391,8 @@
           }
         }
         &Journal {
-          span {
-            a, span {
-              font-size: 10px;
-            }
+          a, span {
+            font-size: 10px;
           }
         }
       }

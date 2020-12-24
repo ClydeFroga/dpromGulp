@@ -1,0 +1,43 @@
+.listedUp {
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  top: 60%;
+  right: 5px;
+  border-radius: 50%;
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  color: white;
+  svg {
+    position: relative;
+    width: 52px;
+    height: 52px;
+  }
+  &:hover {
+    svg {
+      transform: rotate(-405deg);
+    }
+  }
+  &:active {
+
+  }
+}
+
+.listedUp.visible {
+  opacity: 1;
+}
+
+@media (min-width: 1800px) {
+  .listedUp {
+    right: 12%;
+  }
+}
+@media (max-width: 1024px) {
+  .listedUp {
+    display: none;
+  }
+}

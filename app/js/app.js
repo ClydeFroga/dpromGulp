@@ -151,6 +151,28 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (popular__hidden !== null) {
 		popular__hidden.addEventListener('mouseup', popularUnfold)
 	}
+
+	function openModal() {
+		let modal = document.querySelector('.modalSubscription')
+		modal.style.display = 'block'
+		let j = 0;
+		for(let i = 0; i < 1; i+=0.1) {
+			setTimeout(() => {
+				modal.style.opacity = `${i}`
+			}, j)
+			j+= 25;
+		}
+	}
+
+	function closeModal() {
+		let modal = document.querySelector('.modalSubscription')
+
+		modal.style.display = 'none'
+		modal.style.opacity = '0'
+	}
+
+	document.querySelector('#closeModal').addEventListener('mouseup', closeModal)
+	document.querySelector('#openModal').addEventListener('mouseup', openModal)
 })
 
 function slider() {
@@ -185,6 +207,11 @@ function slider() {
 			1024: {
 				slidesPerView: 5,
 			},
+		},
+		scrollbar: {
+			el: '#sliderBigTwo-scrollbar',
+			draggable: true,
+			hide: false,
 		},
 	});
 	var sliderDouble = new Swiper('#sliderMini', {
@@ -243,3 +270,43 @@ function slider() {
 	});
 }
 document.addEventListener('DOMContentLoaded', slider)
+
+let arrowUp= ''
+let getArrowUpObj = {
+	on: function () {
+		arrowUp.style.display = 'flex'
+		setTimeout(() =>arrowUp.classList.add('visible'), 500)
+	},
+	off: function () {
+		arrowUp.classList.remove('visible')
+		setTimeout(() =>arrowUp.style.display = '', 500)
+	},
+	getArrowUp: function () {
+		arrowUp = document.querySelector('.listedUp')
+		document.addEventListener('scroll', getArrowUpObj.onScroll)
+		arrowUp.addEventListener('mouseup', getArrowUpObj.toUp)
+	},
+	onScroll: function () {
+		if(pageYOffset > 700) {
+			if(!arrowUp.classList.contains('visible')) {
+				getArrowUpObj.on()
+			}
+		} else if(pageYOffset < 400) {
+			if(arrowUp.classList.contains('visible')) {
+				getArrowUpObj.off()
+			}
+		}
+	},
+	toUp: function () {
+		document.removeEventListener('scroll',getArrowUpObj.onScroll)
+		getArrowUpObj.off()
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		});
+		setTimeout(() => document.addEventListener('scroll', getArrowUpObj.onScroll), 2000)
+	},
+}
+if(document.documentElement.clientWidth > 768) {
+	document.addEventListener('DOMContentLoaded', getArrowUpObj.getArrowUp)
+}

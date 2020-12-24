@@ -45,6 +45,7 @@ a {
 
 
 @import "blocks/header";
+@import "blocks/header__container";
 @import "blocks/breadcrumbs";
 @import "blocks/footer";
 @import "blocks/socialMedia";
@@ -61,12 +62,13 @@ a {
 @import "blocks/sections";
 @import "blocks/newMagazine";
 @import "blocks/sidebarNews";
-@import "blocks/blockWithoutImg";
+@import "blocks/modalSubscription";
 @import "blocks/inTrend";
 @import "blocks/aboutUs";
 @import "blocks/foxyFBlock";
 @import "blocks/partnerMaterial";
 @import "blocks/newsOfADay";
+@import "blocks/listedUp";
 @import "blocks/oneBlockSide";
 @import "blocks/bigAndSlider";
 @import "blocks/popular";
@@ -86,3 +88,4 @@ a {
 @import "blocks/rubric";
 @import "blocks/spec";
 @import "blocks/page404";
+@import "blocks/magArchive";
