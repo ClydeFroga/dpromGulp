@@ -10,6 +10,8 @@
       flex-direction: column;
       &Top {
         .horizontalBarFirst {
+          flex: 0 0 31%;
+          padding-top: 23.6%;
           margin-right: 5%;
         }
       }
@@ -19,6 +21,10 @@
           display: grid;
           gap: 15px;
           grid-template-columns: repeat(2, 1fr);
+          &First {
+            flex: 0 0 33%;
+            padding-top: 24.6%;
+          }
           > div {
             margin: 0;
             padding: 0;
