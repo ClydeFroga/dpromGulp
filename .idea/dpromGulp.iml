@@ -6,5 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="forest" />
     <orderEntry type="module" module-name="first" />
+    <orderEntry type="module" module-name="dprom2_0" />
+    <orderEntry type="module" module-name="dprom3" />
   </component>
 </module>

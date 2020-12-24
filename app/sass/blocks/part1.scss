@@ -38,7 +38,7 @@
           display: block;
           span {
             display: block;
-            font-size: 10px;
+            font-size: 12px;
             line-height: 16px;
             letter-spacing: 0.4px;
           }
@@ -123,12 +123,6 @@
     &__left {
       #scroll {
         max-height: 640px;
-        .part1__leftLeftBlock {
-          a, span {
-            font-size: 7px;
-            line-height: 10px;
-          }
-        }
       }
     }
 
