@@ -61,6 +61,11 @@
   }
 }
 
+.stickyFox {
+  position: sticky;
+  top: 25px;
+}
+
 @media (max-width: 1024px) {
   .foxyLong {
     margin: auto;

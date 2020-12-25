@@ -14,14 +14,14 @@
       bottom: 0;
     }
     &:after {
-      content: url("../images/dist/corner.png");
+      content: url("img/corner.png");
       position: absolute;
       top: 0;
       right: 0;
       z-index: 0;
     }
     &:before {
-      content: url("../images/dist/corner.png");
+      content: url("img/corner.png");
       transform: scale(-1, -1);
       position: absolute;
       bottom: 0;

@@ -307,14 +307,10 @@
     &Sidebar {
       grid-area: sidebar;
       &Block {
-        display: grid;
+        display: flex;
         row-gap: 40px;
-        grid-template-columns: 1fr;
-        &Foxy {
-          > div {
-            margin-bottom: 20px;
-          }
-        }
+        flex-direction: column;
+        height: 100%;
       }
     }
     .foxyLong {
@@ -334,25 +330,12 @@
 @media (max-width: 1279px) {
   .single {
     &__content {
-        grid-template:
-      "left sidebar"
-      "foxyLong foxyLong"
-      "comments comments"
-      /1fr 300px
-      ;
-      &Left {
-         .single__contentSticky {
-          margin: 0 0 20px 20px;
-          display: block;
-          float: right;
-          &Block {
-            padding: 20px;
-          }
-        }
-      }
-      &Sticky {
-        display: none;
-      }
+      grid-template:
+    "left sticky sidebar"
+    "foxyLong foxyLong foxyLong"
+    "comments comments comments"
+    /5fr 2.5fr 300px
+    ;
     }
   }
 }
@@ -395,17 +378,21 @@
             font-size: 10px;
           }
         }
-      }
-
-      &SidebarBlockFoxy {
-        .foxy {
-          display: flex;
-          justify-content: center;
-          a {
-            width: 100%;
-            height: auto;
-            min-height: 160px;
+        .single__contentSticky {
+          margin: 0 0 20px 20px;
+          display: block;
+          float: right;
+          &Block {
+            padding: 20px;
           }
+        }
+      }
+      &Sticky {
+        display: none;
+      }
+      &Sidebar {
+        .foxy {
+          margin: 0;
         }
       }
     }
@@ -492,18 +479,6 @@
         .sidebarNews, .sidebarNewMag {
           display: none;
         }
-        .foxyA {
-          a {
-            width: 300px;
-            min-height: 500px;
-          }
-        }
-        .foxy {
-          a {
-            width: 300px;
-            min-height: 300px;
-          }
-        }
       }
     }
   }
@@ -524,7 +499,7 @@
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 340px) {
   .single {
     &__content {
       &Left {

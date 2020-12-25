@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 	}
+
 	let mainBlock = ''
 	let categories = ''
 	let filterItems = document.querySelectorAll('.journal__block1LeftSections .sections__blocksBlock')
@@ -172,7 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	document.querySelector('#closeModal').addEventListener('mouseup', closeModal)
-	document.querySelector('#openModal').addEventListener('mouseup', openModal)
+	let openModalBut = document.querySelectorAll('#openModal')
+1
+	if(openModalBut.length > 0) {
+		openModalBut.addEventListener('mouseup', openModal)
+	}
+
+
 })
 
 function slider() {
