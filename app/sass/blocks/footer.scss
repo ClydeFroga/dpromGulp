@@ -203,3 +203,28 @@ footer {
     }
   }
 }
+@media (max-width: 365px) {
+  footer {
+    .footer {
+      &__four {
+        .form {
+          .sp-form-fields-wrapper {
+            width: 100%;
+          }
+          .sp-form-outer {
+            form {
+              > div:nth-child(5) {
+                label {
+                  position: relative;
+                  > span:first-of-type {
+                    width: 180px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

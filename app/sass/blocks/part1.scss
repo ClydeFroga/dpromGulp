@@ -156,10 +156,13 @@
           display: none;
         }
       }
-    }
-    .slider {
-      &__scrollbar {
-        display: none;
+      &Left {
+        &Block {
+          span {
+            font-size: 11px;
+            line-height: 13px;
+          }
+        }
       }
     }
   }

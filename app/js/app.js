@@ -176,7 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	let openModalBut = document.querySelectorAll('#openModal')
 1
 	if(openModalBut.length > 0) {
-		openModalBut.addEventListener('mouseup', openModal)
+		for(let item of openModalBut) {
+			item.addEventListener('mouseup', openModal)
+		}
 	}
 
 

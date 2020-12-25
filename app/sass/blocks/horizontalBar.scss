@@ -222,6 +222,10 @@
 
 @media (max-width: 767px) {
   .horizontalBar {
+    &__Right > span {
+      font-size: 11px !important;
+      line-height: 13px !important;
+    }
     .horizontalBar__RightTitle {
       font-size: 9px !important;
     }

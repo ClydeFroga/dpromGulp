@@ -82,6 +82,11 @@
   .sections {
     &__blocks {
       grid-template-columns: repeat(1, 1fr);
+      &Block {
+        span {
+          width: 125px;
+        }
+      }
     }
   }
 }

@@ -242,9 +242,6 @@
       .single__contentSticky {
         display: none;
       }
-      &730 {
-        display: none;
-      }
     }
     &Sticky {
       grid-area: sticky;
@@ -411,33 +408,15 @@
       /1fr
     ;
       &Left {
+        .loadedArticle > .dateAndViews {
+          display: none;
+        }
         .single__contentSticky {
           display: none;
         }
-        &730 {
-          margin: 15px -40px 0 -40px;
-          display: block;
-           span:nth-child(1) {
-             color: $grey1;
-            font-size: 10px;
-            line-height: 24px;
-          }
-          .single__contentStickyBlock {
-            max-width: unset;
-            width: 100%;
-            float: none;
-            padding: 20px 40px;
-            > div {
-              justify-content: flex-start;
-              .socialMedia {
-                margin-right: 20px;
-              }
-            }
-          }
-        }
         &Text {
-          font-size: 13px;
-          line-height: 22px;
+          font-size: 18px;
+          line-height: 27px;
           .wp-block-image {
             figcaption {
               font-size: 9px;
@@ -484,31 +463,12 @@
   }
 }
 
-@media (max-width: 576px) {
-  .single {
-    &__content {
-      &Left {
-        &730 {
-          margin: 15px -20px 0 -20px;
-          .single__contentStickyBlock {
-            padding: 20px 20px;
-          }
-        }
-      }
-    }
-  }
-}
+
 
 @media (max-width: 340px) {
   .single {
     &__content {
       &Left {
-        &730 {
-          margin: 15px -5px 0 -5px;
-          .single__contentStickyBlock {
-            padding: 20px 5px;
-          }
-        }
         table {
           word-break: break-all;
         }

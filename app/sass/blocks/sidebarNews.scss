@@ -6,19 +6,31 @@
     > div:last-of-type {
       border: none;
     }
-    .horizontalBarFirst {
+    &First {
       flex: 0 0 32%;
       padding-top: 23.6%;
     }
-    .horizontalBar__Right{
+    &__Right{
       justify-content: center;
     }
   }
   .dateAndViews {
-    padding-left: 37%;
+    padding-left: 35%;
     justify-content: space-between;
-    .date {
+    .date, .category {
       margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebarNews {
+    .horizontalBar {
+      &__Right{
+        span {
+          line-height: 12px !important;
+        }
+      }
     }
   }
 }

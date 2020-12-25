@@ -8,6 +8,9 @@
     column-gap: 40px;
     row-gap: 15px;
     grid-template-columns: repeat(2, 1fr);
+    &__Right {
+      width: 100%;
+    }
     &First {
       flex: 0 0 28%;
       padding-top: 20.6%;
@@ -17,7 +20,7 @@
       margin: 0;
     }
     .dateAndViews {
-      justify-content: flex-start;
+      justify-content: space-between;
     }
   &__Right {
     > span {

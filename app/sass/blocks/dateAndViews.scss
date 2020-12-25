@@ -44,8 +44,7 @@
   }
 
   .views {
-    //display: flex;
-    //align-items: center;
+    display: inline-flex;
     &:before {
       content: '';
       width: 12px;

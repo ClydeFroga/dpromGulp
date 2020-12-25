@@ -4,7 +4,7 @@
   }
   .horizontalBar {
     > div {
-      > a {
+      > div {
         background-color: $grey5;
         .horizontalBarFirst {
           flex: 0 0 29%;
@@ -13,7 +13,7 @@
       }
     }
     &__Right {
-     > span {
+     > a {
        font-weight: 600;
        font-size: 14px;
        line-height: 20px;
@@ -55,6 +55,19 @@
     }
     .horizontalBar {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .popular {
+    .horizontalBar {
+      &__Right {
+        > a {
+          font-size: 11px;
+          line-height: 13px;
+        }
+      }
     }
   }
 }
