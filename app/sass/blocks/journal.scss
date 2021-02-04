@@ -21,18 +21,26 @@
       grid-template-columns: 1fr 1fr;
       gap: 20px;
       .horizontalBar {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         >div:not(:last-child) {
           padding-bottom: 7px;
           margin-bottom: 7px;
         }
         > div {
-          > a {
+          > div {
             padding: 15px 40px;
             a {
               margin-bottom: 0;
             }
           }
         }
+      }
+      .popular {
+        display: flex;
+        flex-direction: column;
       }
     }
 
@@ -42,6 +50,9 @@
         margin-top: 0;
         &__blocks {
           margin-top: 0;
+          &Block {
+            max-height: 85px;
+          }
         }
       }
       svg {
@@ -194,6 +205,9 @@
           column-gap: 15px;
           display: grid;
           grid-template-columns: 1fr;
+          > div > div {
+            padding: 15px 20px;
+          }
         }
         .popular {
           &__hidden {
@@ -249,6 +263,17 @@
       }
       .loadmore {
         margin-left: 0;
+      }
+    }
+    .part8 {
+      &__wrapperLeftTop {
+        a {
+          flex-direction: column;
+        }
+        .horizontalBarFirst {
+          padding-top: 76.6%;
+          margin-bottom: 20px;
+        }
       }
     }
   }

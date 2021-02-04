@@ -1,21 +1,36 @@
 .header {
   &__container {
-    height: 180px;
+    height: 220px;
     &.expanded {
       .header__hidden {
         bottom: 0;
       }
-
     }
   }
   &__top {
-    background: url('img/header.jpg') no-repeat;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: bottom;
+    background-position: 50% 50%;
     position: relative;
     z-index: 3;
+    &Logos {
+      display: flex;
+      position: absolute;
+      right: 0;
+      left: 15px;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      > img {
+        width: 25%;
+      }
+      a {
+        z-index: 3;
+        width: 15%;
+      }
+    }
     &Spec {
       position: absolute;
       height: 100%;
@@ -78,12 +93,13 @@
         }
       }
       span:first-child {
-        background-color: $secondary-color;
+        background-color: #f39200;
+        color: white;
         &:before {
           content:'';
           width: 20px;
           height: 20px;
-          background: url('svg/assets/info.svg') no-repeat;
+          background: url('svg/assets/infoNew.svg') no-repeat;
           background-size: cover;
         }
       }
@@ -105,9 +121,48 @@
     .container {
       height: 100%;
       position: relative;
+      &:after {
+        content: '';
+        background-image: url("img/heli.png");
+        width: 300px;
+        height: 150px;
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 36%;
+      }
+      .newNadpis {
+          width: 50%;
+          height: 39%;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+  }
+  .collapseAdditionalButton {
+    display: none;
+    background-color: $grey5;
+    color: #C6C6C6;
+    font-size: 10px;
+    cursor: pointer;
+    &:before {
+      content:'';
+      width: 13px;
+      height: 13px;
+      background: url('svg/assets/close.svg') no-repeat;
+      background-size: cover;
+      margin-right: 5px;
+      margin-bottom: 2px;
     }
   }
-
   &__container.collapsed {
     height: 50px;
     .header__hidden {
@@ -116,7 +171,18 @@
     .header__top {
       position: relative;
       height: 0;
-      background: linear-gradient(180deg, #FFB240 0%, #FF9900 76.04%);
+      background: linear-gradient(180deg, #FFB240 0%, #FF9900 76.04%) !important;
+      .newNadpis {
+        display: none;
+      }
+      .container {
+        &:after {
+          content: none;
+        }
+      }
+      &Logos {
+        display: none;
+      }
       &Spec {
         opacity: 0;
       }
@@ -126,7 +192,7 @@
         max-width: unset;
         .headerHiddenLink {
           display: flex;
-          color: black;
+          color: white;
           font-size: 10px;
           line-height: 16px;
           align-items: center;
@@ -178,21 +244,22 @@
         }
       }
       &.two {
-        background: $brown3;
+        background: $brown3 !important;
       }
       &.one {
-        background: $main-color;
+        background: $main-color !important;
       }
       &.release {
         transition: .3s;
         height: 50px;
       }
     }
+
   }
   &__hidden {
     position: relative;
     z-index: 1;
-    bottom: 500px;
+    bottom: 1000px;
     box-shadow: 0 25px 25px rgba(0, 0, 0, 0.15);
     > div {
       position: relative;
@@ -200,7 +267,11 @@
       display: flex;
       justify-content: space-between;
     }
-    p {
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    p, ul li {
       margin: 0 10vw;
       font-size: 12px;
       line-height: 16px;
@@ -212,6 +283,9 @@
         color: $main-color;
         text-decoration: underline;
       }
+    }
+    p, ul {
+      margin-bottom: 5px;
     }
     &Button {
       max-height: 44px;
@@ -247,6 +321,7 @@
           &Text {
             left: 40px;
           }
+
           &ButtonsHidden {
             margin-right: 40px;
           }
@@ -254,16 +329,33 @@
       }
     }
     &__top {
+      .newNadpis {
+        display: none;
+      }
+      .container{
+        &:after {
+          width: 50%;
+          width: available;
+          width: -moz-available;
+
+          height: 100%;
+          z-index: -1;
+        }
+      }
       &Spec {
         display: none;
       }
       &Text {
         max-width: 350px;
         bottom: 3px;
+        left: 40px;
       }
       &Title {
-        font-size: 4rem;
-        line-height: 4rem;
+        font-size: 36px;
+        line-height: 48px;
+      }
+      &Logos {
+        left: 40px;
       }
     }
   }
@@ -280,6 +372,9 @@
         }
         .header__topText {
           left: 20px;
+          .headerHiddenLink {
+            font-size: 8px;
+          }
         }
         .header__topButtonsHidden span {
           font-size: 7px;
@@ -290,24 +385,43 @@
       }
     }
     &__top {
+      &Logos {
+        left: 20px;
+        > img {
+          width: 40%;
+        }
+        a {
+          width: 35%;
+        }
+      }
       &Text {
         left: 20px;
         max-width: 320px;
       }
       &Title {
-        font-size: 2.5rem;
-        line-height: 3rem;
+        font-size: 32px;
+        line-height: 40px;
       }
       &Buttons {
         display: flex;
         left: 0;
         width: 100%;
         top: 100%;
+        height: 38px;
+        span {
+          padding-top: 4px;
+          font-size: 8px;
+        }
         > span:first-child {
           flex: 0 0 55%;
         }
         > span:last-child {
           flex: 0 0 45%;
+        }
+      }
+      .container {
+        &:after {
+          left: 50%;
         }
       }
     }
@@ -317,17 +431,49 @@
         flex-direction: column;
         gap: 20px;
       }
-      p {
-        margin: 15px 0;
+      ul {
+        margin: 5px 0;
+      }
+      ul li {
+        margin: 0;
+      }
+      p:first-child {
+        margin: 30px 0 0;
+      }
+      p, ul {
+        margin: 0 0 5px 0;
       }
       &Button {
         max-width: max-content;
       }
     }
+    .specWrap {
+      display: flex;
+      gap: 15px;
+    }
+    .collapseAdditionalButton {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .header__container.collapsed .header__topText {
+    top: 5px;
+  }
+  .header__container.collapsed .header__topButtonsHidden {
+    left: 22px;
+    margin-top: 30px;
   }
 }
 
 @media (max-width: 330px) {
+  .header__container.collapsed .header__topButtonsHidden {
+    left: 6px;
+  }
   .header {
     &__container {
       &.collapsed {
@@ -340,6 +486,9 @@
       }
     }
     &__top {
+      &Logos {
+        left: 5px;
+      }
       &Text {
         left: 5px;
       }

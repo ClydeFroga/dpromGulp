@@ -48,6 +48,7 @@
     ;
       align-items: center;
       .sp-field {
+        z-index: 2;
         position: relative;
         padding: 0;
         margin: 10px;
@@ -165,6 +166,13 @@
       }
     }
   }
+}
+
+.loadedArticle {
+  .sp-form-outer {
+    margin-top: 20px;
+  }
+  .sp-force-hide { display: none;}.sp-form[sp-id="134865"] { display: block; background: rgba(255, 255, 255, 1); padding: 30px; width: 100%; max-width: 100%; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-color: #c49a6c; border-style: solid; border-width: 1px; font-family: Arial, "Helvetica Neue", sans-serif; background-repeat: no-repeat; background-position: center; background-size: auto; margin-bottom:1.5em;}.sp-form[sp-id="134865"] input[type="checkbox"] { display: inline-block; opacity: 1; visibility: visible;}.sp-form[sp-id="134865"] .sp-form-fields-wrapper { margin: 0 auto; width: 90%;}.sp-form[sp-id="134865"] .sp-form-control { background: #ffffff; border-color: #cccccc; border-style: solid; border-width: 3px; font-size: 15px; padding-left: 8.75px; padding-right: 8.75px; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px; height: 35px; width: 100%;}.sp-form[sp-id="134865"] .sp-field label { color: #444444; font-size: 13px; font-style: normal; font-weight: bold;}.sp-form[sp-id="134865"] .sp-button { border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px; background-color: #96693d; color: #ffffff; width: 133px; font-weight: 700; font-style: normal; font-family: "Segoe UI", Segoe, "Avenir Next", "Open Sans", sans-serif; box-shadow: inset 0 -2px 0 0 #6a4b2b; -moz-box-shadow: inset 0 -2px 0 0 #6a4b2b; -webkit-box-shadow: inset 0 -2px 0 0 #6a4b2b;}.sp-form[sp-id="134865"] .sp-button-container { text-align: center; width: auto;}
 }
 
 

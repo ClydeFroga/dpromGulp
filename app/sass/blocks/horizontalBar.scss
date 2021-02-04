@@ -13,6 +13,7 @@
     }
   }
   &__Right {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -156,11 +157,11 @@
       line-height: 10px !important;
     }
     .horizontalBar__RightTitle {
-      font-size: 10px !important;
+      font-size: 12px !important;
       line-height: 16px !important;
     }
     .horizontalBar__RightText {
-      font-size: 7px !important;
+      font-size: 11px !important;
       line-height: 16px !important;
     }
     .horizontalBarFirst {
@@ -227,7 +228,7 @@
       line-height: 13px !important;
     }
     .horizontalBar__RightTitle {
-      font-size: 9px !important;
+      font-size: 11px !important;
     }
     div:last-child {
       border: none;

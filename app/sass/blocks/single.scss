@@ -6,7 +6,6 @@
     row-gap: 25px;
     grid-template:
     "left sticky sidebar"
-    "foxyLong foxyLong foxyLong"
     "comments comments comments"
     /650px 2.5fr 300px
   ;
@@ -20,8 +19,12 @@
         margin: 15px 0;
       }
       .dateAndViews {
+        align-items: center;
         justify-content: flex-start;
         margin-top: 15px;
+      }
+      .dateAndViews2 {
+        text-transform: uppercase;
       }
       &Text {
         margin-top: 60px;
@@ -242,6 +245,15 @@
       .single__contentSticky {
         display: none;
       }
+      .foxyLong {
+        margin-top: 25px;
+      }
+      .loadedArticle:nth-child(n + 2) {
+        margin-top: 90px;
+        .single__contentLeftText {
+          margin-top: 30px;
+        }
+      }
     }
     &Sticky {
       grid-area: sticky;
@@ -263,15 +275,22 @@
           font-size: 16px;
           line-height: 20px;
         }
-        > span:nth-child(3), > span:nth-child(6) {
+        > span:nth-child(3) {
           color: $grey4;
           letter-spacing: 0.4px;
         }
-        > span:nth-child(6) {
+        .sponsor {
+          margin: 30px auto 0 auto;
           display: flex;
           justify-content: center;
-          font-size: 12px;
-          line-height: 16px;
+          flex-direction: column;
+          align-items: center;
+          span {
+            font-size: 12px;
+            line-height: 16px;
+            color: $grey4;
+            letter-spacing: 0.4px;
+          }
         }
         > div {
           display: flex;
@@ -280,24 +299,65 @@
             margin-right: 5px;
           }
         }
-        > img {
+        img {
+          margin-bottom: 15px;
           display: flex;
-          margin: 30px auto 15px auto;
+
         }
         &Thumbs {
-          display: flex;
-          svg {
+          .thumbs-rating-container {
+            position: relative;
+            display: flex;
+          }
+
+          .thumbs-rating-container button {
             cursor: pointer;
-            width: 17px;
-            height: 16px;
-            color: white;
-            &:first-child {
-              margin-right: 10px;
-            }
-            &:hover {
-              color: $main-color;
+          }
+          .thumbs-rating-already-voted {
+            margin-left: 30px;
+            width: max-content;
+            display: none;
+            &.thumbs-rating-show {
+              opacity: 1;
+              z-index: 5;
+              display: block;
+              position: absolute;
+              background-color: #9e6b36;
+              padding: 5px 10px;
+              bottom: 120%;
+              right: 0;
+              color: white;
             }
           }
+          .thumbs-rating-container .thumbs-rating-up,
+          .thumbs-rating-container .thumbs-rating-down {
+            margin-left: 10px;
+            border: none;
+            background-color: transparent;
+            width: 19px;
+            height: 18px;
+            display: block;
+            background-repeat: no-repeat;
+          }
+          .thumbs-rating-container .thumbs-rating-up.thumbs-rating-voted {
+            background-image: url("svg/assets/thumbUpVoted.svg");
+          }
+          .thumbs-rating-container .thumbs-rating-down.thumbs-rating-voted {
+            background-image: url("svg/assets/thumbDownVoted.svg");
+          }
+          .thumbs-rating-container .thumbs-rating-up {
+            background-image: url("svg/assets/thumbUp.svg");
+            &:hover {
+              background-image: url("svg/assets/thumbUpVoted.svg");
+            }
+          }
+          .thumbs-rating-container .thumbs-rating-down {
+            background-image: url("svg/assets/thumbDown.svg");
+            &:hover {
+              background-image: url("svg/assets/thumbDownVoted.svg");
+            }
+          }
+          display: flex;
         }
       }
     }
@@ -310,9 +370,7 @@
         height: 100%;
       }
     }
-    .foxyLong {
-      grid-area: foxyLong;
-    }
+
     .comments {
       grid-area: comments;
     }
@@ -321,6 +379,11 @@
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 25px;
+    .part3 {
+      .dateAndViews {
+        justify-content: flex-start;
+      }
+    }
   }
 }
 
@@ -407,6 +470,12 @@
       "sidebar"
       /1fr
     ;
+      .wp-block-image:not(.forBlockquote) {
+        .alignleft , .alignright {
+          float: unset !important;
+          margin: auto !important;
+        }
+      }
       &Left {
         .loadedArticle > .dateAndViews {
           display: none;
@@ -462,8 +531,6 @@
     }
   }
 }
-
-
 
 @media (max-width: 340px) {
   .single {

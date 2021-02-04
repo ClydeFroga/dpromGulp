@@ -51,6 +51,9 @@
       }
     }
     &Bottom {
+      .socialMedia {
+        display: none;
+      }
       margin: 20px 0;
       &Menu {
         margin: 0;
@@ -108,10 +111,12 @@
   position: relative;
   display: inline-block;
   > a:after {
-    content: url("svg/assets/arrowDown.svg");
+    background-image: url("svg/assets/arrowDown.svg");
+    content: '';
     width: 10px;
     height: 5px;
     margin-left: 5px;
+    display: inline-block;
   }
 }
 
@@ -125,8 +130,9 @@
     }
   }
   > a:after {
-    content: url("svg/assets/arrowUp.svg");
+    background-image: url("svg/assets/arrowUp.svg");
   }
+
 }
 
 .sub-menu {
@@ -140,6 +146,9 @@
   width: 100%;
   li {
     a {
+      text-align: left;
+      padding-left: 10px;
+      line-height: 14px;
       color: #878787;
     }
     a:hover {
@@ -175,7 +184,7 @@
           position: absolute;
           margin-top: 10px;
           top: 100%;
-          width: 130px;
+          width: 150px;
           right: 0;
         }
       }
@@ -326,8 +335,11 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 620px) {
   .header {
+    &__bot {
+      margin-top: 20px;
+    }
     &__botTop {
       &Logo {
         flex: 0 0 70% !important;
@@ -382,10 +394,25 @@
         }
       }
       &.expanded {
-        margin: 30px -20px;
+        margin: 30px -40px;
         padding: 15px 20px;
         flex-direction: column;
       }
+      .socialMedia {
+        display: flex;
+        order: 3;
+      }
+    }
+    .sub-menu.expanded {
+      grid-template-columns: repeat(1, auto);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    &__botBottom.expanded {
+      margin: 30px -20px;
     }
   }
 }

@@ -78,14 +78,16 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .part8 {
     &__wrapper {
       grid-template-columns: 1fr;
       &Left {
+
         &Top {
           .horizontalBar {
-            > div >div {
+            > div >a {
               display: grid;
               row-gap: 20px;
               grid-template-columns: repeat(1, auto);

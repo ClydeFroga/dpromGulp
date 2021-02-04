@@ -5,7 +5,7 @@
     grid-template:
     "title foxy"
     "list foxy"
-    "page ."
+    "loadmore ."
     /9fr 3fr;
     column-gap: 20px;
     .h2Title {
@@ -18,13 +18,16 @@
         justify-content: flex-start;
         align-items: center;
       }
+      .horizontalBar > div:not(:last-child) {
+        margin-bottom: 30px;
+      }
     }
     .foxyA {
       grid-area: foxy;
     }
     .loadmore {
-      display: none;
-      margin-left: 18%;
+      //display: none;
+      margin-left: 25%;
       grid-area: loadmore;
     }
     .pagination {
@@ -107,7 +110,7 @@
       grid-template:
         "title"
         "list"
-        "page"
+        "loadmore"
         "foxy"
       /1fr
         ;
@@ -117,7 +120,7 @@
           min-height: 500px;
         }
       }
-      .pagination {
+      .pagination, .loadmore {
         margin-left: unset;
       }
       .dateAndViews {

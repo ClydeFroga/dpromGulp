@@ -10,15 +10,15 @@
     column-gap: 30px;
     row-gap: 25px;
     grid-template:
-    "title sidebar"
     "left sidebar"
     /1fr 300px
   ;
-    > .h2Title {
-      grid-area: title;
-      margin-bottom: 0;
-    }
+
     &Left {
+      > .h2Title {
+        //grid-area: title;
+        margin-bottom: 0;
+      }
       grid-area: left;
       display: flex;
       flex-direction: column;
@@ -69,7 +69,6 @@
   .rubric {
     &__top {
       grid-template:
-    "title sidebar"
     "left sidebar"
     /1fr 160px
     ;
@@ -93,7 +92,6 @@
   .rubric {
     &__top {
       grid-template:
-        "title"
         "left "
         "sidebar"
         /1fr

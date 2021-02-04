@@ -15,10 +15,21 @@
     }
   }
   .dateAndViews {
-    padding-left: 35%;
+    //padding-left: 35%;
+    //margin-top: 8px;
     justify-content: space-between;
     .date, .category {
       margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .sidebarNews {
+    .horizontalBar {
+      &First{
+          display: none;
+      }
     }
   }
 }
@@ -30,6 +41,9 @@
         span {
           line-height: 12px !important;
         }
+      }
+      &First{
+        display: unset;
       }
     }
   }

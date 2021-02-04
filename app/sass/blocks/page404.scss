@@ -24,6 +24,9 @@
       .search {
         padding: 15px 15px 10px 15px;
         border: 1px solid #C4C4C4;
+        label {
+          width: 100%;
+        }
         input {
           color: black;
           font-size: 12px;
@@ -83,6 +86,11 @@
       row-gap: 30px;
       grid-template-columns: 1fr;
       &Left {
+        .horizontalBar {
+          &__RightTitle {
+            font-size: 13px !important;
+          }
+        }
         .loadmore {
           margin-left: 0;
         }

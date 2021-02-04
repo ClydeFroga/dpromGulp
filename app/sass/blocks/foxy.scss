@@ -37,7 +37,6 @@
 
 .foxyLong {
   max-width: 728px;
-  min-width: 728px;
   width: 100%;
   height: auto;
   display: flex;
@@ -65,6 +64,9 @@
   position: sticky;
   top: 25px;
 }
+
+
+
 
 @media (max-width: 1024px) {
   .foxyLong {
@@ -110,17 +112,11 @@
       height: 160px;
     }
   }
-}
-
-@media (max-width: 1023px) {
-  .foxyLong {
-    min-width: 0;
-  }
   .foxy, .foxyF {
     margin: auto;
   }
-  .foxyF {
-      justify-content: center;
+  .foxyLong {
+    min-width: 0;
   }
 }
 
