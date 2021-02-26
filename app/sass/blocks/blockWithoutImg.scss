@@ -2,6 +2,9 @@
   &__Block {
     display: flex;
     flex-direction: column;
+    &:hover {
+      background-color: $grey5;
+    }
     &:first-child {
       margin-top: 40px;
     }

@@ -16,10 +16,16 @@
   &__left {
     grid-area: left;
     &Left {
+      .h2Title:hover {
+        color: $brown3;
+      }
       display: flex;
       flex-direction: column;
       &Block {
         display: block;
+        &:hover {
+          background-color: rgba(177, 152, 125,0.1);
+        }
         span {
           display: block;
           font-size: 12px;
@@ -70,6 +76,11 @@
     padding-bottom: 10px;
     //max-height: 500px;
 
+    a:hover {
+      span {
+        color: $brown3;
+      }
+    }
     .verticalBlock {
       .imgBlock {
         border-bottom: 2px solid $secondary-color;

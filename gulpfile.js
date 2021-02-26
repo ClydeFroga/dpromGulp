@@ -13,6 +13,7 @@ const imagemin     = require('gulp-imagemin')
 const newer        = require('gulp-newer')
 const rsync        = require('gulp-rsync')
 const del          = require('del')
+const ts 		   = require("gulp-typescript");
 
 function svg() {
 	return src('**/*.svg', { cwd: 'app/sass/svg/assets' })
@@ -25,9 +26,6 @@ function svg() {
 		.pipe(dest('app/sass/svg/out'));
 }
 
-
-
-
 function browsersync() {
 	browserSync.init({
 		server: {
@@ -38,6 +36,16 @@ function browsersync() {
 		notify: false,
 		online: true
 	})
+}
+
+function typescript() {
+	return src('app/js/**/*.ts')
+		.pipe(ts({
+			noImplicitAny: true,
+			outFile: 'output.js',
+			target: 'ES6'
+		}))
+		.pipe(dest('app/js'));
 }
 
 function scripts() {
@@ -122,15 +130,17 @@ function deploy() {
 function startwatch() {
 	watch('app/sass/svg/assets/*', { usePolling: true }, svg)
 	watch('app/sass/**/*.scss', { usePolling: true }, styles)
-	watch(['app/js/**/*.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
+	watch(['app/js/**/*.ts'], { usePolling: true }, typescript)
+	watch(['app/js/app.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
 	watch('app/images/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
 	watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
 }
 
 exports.scripts = scripts
 exports.styles  = styles
+exports.typeScript  = typescript
 exports.images  = images
 exports.deploy  = deploy
 exports.assets  = series(scripts, styles, images)
 exports.build   = series(cleandist, scripts, styles, images, buildcopy, buildhtml)
-exports.default = series(svg, scripts, styles, images, parallel(browsersync, startwatch))
+exports.default = series(scripts, styles, typescript, parallel(browsersync, startwatch))
