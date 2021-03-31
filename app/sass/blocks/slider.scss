@@ -39,7 +39,6 @@
   }
 
 }
-
 .sliderBackground {
   position: relative;
   &__Small {
@@ -107,7 +106,6 @@
     .imgBlock:before {
       background: linear-gradient(0deg, rgba(158, 107, 54, 0.79), rgba(158, 107, 54, 0.79));
     }
-
     .sliderBackground__SmallText {
       bottom: 50%;
       &Title {
@@ -168,12 +166,16 @@
       &Text {
         &Title {
           padding: 0;
-          font-size: 9px;
-          line-height: 12px;
+          font-size: 13px;
+          line-height: 16px;
         }
       }
       &Hidden {
         padding: 10px 15px;
+        span {
+          font-size: 12px;
+          line-height: 15px;
+        }
       }
     }
   }

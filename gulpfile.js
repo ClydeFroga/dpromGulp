@@ -13,7 +13,7 @@ const imagemin     = require('gulp-imagemin')
 const newer        = require('gulp-newer')
 const rsync        = require('gulp-rsync')
 const del          = require('del')
-const ts 		   = require("gulp-typescript");
+// const ts 		   = require("gulp-typescript");
 
 function svg() {
 	return src('**/*.svg', { cwd: 'app/sass/svg/assets' })
@@ -38,15 +38,15 @@ function browsersync() {
 	})
 }
 
-function typescript() {
-	return src('app/js/**/*.ts')
-		.pipe(ts({
-			noImplicitAny: true,
-			outFile: 'output.js',
-			target: 'ES6'
-		}))
-		.pipe(dest('app/js'));
-}
+// function typescript() {
+// 	return src('app/js/**/*.ts')
+// 		.pipe(ts({
+// 			noImplicitAny: true,
+// 			outFile: 'output.js',
+// 			target: 'ES6'
+// 		}))
+// 		.pipe(dest('app/js'));
+// }
 
 function scripts() {
 	return src('app/js/app.js')
@@ -75,12 +75,15 @@ function scripts() {
 }
 
 function styles() {
-	return src('app/sass/main.scss')
+	// return src('app/sass/main.scss')
+	return src('app/sass/specMWR.scss')
 		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(autoprefixer({ grid: 'autoplace' }))
-		.pipe(rename('style.css'))
+		.pipe(rename('mwr2021.css'))
+		// .pipe(rename('style.css'))
 		.pipe(dest('app/sass'))
-		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3"))
+		// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3"))
+		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
 		.pipe(browserSync.stream())
 }
 
@@ -130,7 +133,7 @@ function deploy() {
 function startwatch() {
 	watch('app/sass/svg/assets/*', { usePolling: true }, svg)
 	watch('app/sass/**/*.scss', { usePolling: true }, styles)
-	watch(['app/js/**/*.ts'], { usePolling: true }, typescript)
+	// watch(['app/js/**/*.ts'], { usePolling: true }, typescript)
 	watch(['app/js/app.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
 	watch('app/images/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
 	watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
@@ -138,9 +141,9 @@ function startwatch() {
 
 exports.scripts = scripts
 exports.styles  = styles
-exports.typeScript  = typescript
+// exports.typeScript  = typescript
 exports.images  = images
 exports.deploy  = deploy
 exports.assets  = series(scripts, styles, images)
 exports.build   = series(cleandist, scripts, styles, images, buildcopy, buildhtml)
-exports.default = series(scripts, styles, typescript, parallel(browsersync, startwatch))
+exports.default = series(scripts, styles, parallel(browsersync, startwatch))

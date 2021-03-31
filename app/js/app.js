@@ -196,284 +196,47 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	jQuery(function($){
-		$('#rubricLoad').click(function(){
-			$('#rubricLoad > span').text('Загружаю...');
-			var data = {
-				'action': 'loadmore',
-				'query': true_posts,
-				'page' : current_page
-			};
-			$.ajax({
-				url:ajaxurl,
-				data:data,
-				type:'POST',
-				success:function(data){
-					if( data ) {
-						$('#rubricLoad > span').text('Загрузить ещё')
-						$('.rubric__topLeft .horizontalBar').append(data);
-						current_page++;
-						if (current_page == max_pages) $("#rubricLoad").remove();
-					} else {
-						$('#rubricLoad').remove();
-					}
+	function editBackgroundImage() {
+		let blc = document.querySelector('.header__top')
+		let set = blc.dataset.srcSet.split(',')
+		let desk =  set[0]
+		let mob = set[1]
+		let width = document.documentElement.clientWidth
+
+		if (width >= 577) {
+			blc.style.backgroundImage = `url('${desk}')`
+		} else {
+			blc.style.backgroundImage = `url('${mob}')`
+		}
+		makeHeight()
+	}
+
+	function makeHeight() {
+		let blc2 = document.querySelector('.header__container')
+		let width = document.documentElement.clientWidth;
+		if(!blc2.classList.contains('collapsed')) {
+			if (width >= 577) {
+				if(!blc2.classList.contains('collapsed')) {
+					let heightOfImg = (width / 2000) * 220;
+					blc2.style.height = `${heightOfImg}px`
 				}
-			});
-		});
+			} else {
+				if(!blc2.classList.contains('collapsed')) {
+					let heightOfImg = (width / 576) * 100;
+					blc2.style.height = `${heightOfImg}px`
+				}
+			}
+		}
+	}
+
+	editBackgroundImage()
+
+	window.addEventListener("orientationchange", function () {
+		setTimeout(editBackgroundImage, 100)
+		setTimeout(makeHeight, 150)
 	});
 
-	jQuery(function($){
-		$('#journalLoad').click(function(){
-			$('#journalLoad > span').text('Загружаю...');
-			var data = {
-				'action': 'loadmore',
-				'query': true_posts,
-				'page' : current_page,
-				'filter' : true
-			};
-			$.ajax({
-				url:ajaxurl,
-				data:data,
-				type:'POST',
-				success:function(data){
-					if( data ) {
-						$('#journalLoad > span').text('Загрузить ещё')
-						$('.journal__block2 .horizontalBar').append(data);
-						current_page++;
-						if (current_page == max_pages) $("#journalLoad").remove();
-					} else {
-						$('#journalLoad').remove();
-					}
-				}
-			});
-		});
-	})
-
-	jQuery(function($){
-		$('#newsLoad').click(function(){
-			$('#newsLoad > span').text('Загружаю...');
-			var data = {
-				'action': '404_news',
-				'offset' : offset,
-			};
-			$.ajax({
-				url:ajaxurl,
-				data:data,
-				type:'POST',
-				success:function(data){
-					if( data ) {
-						$('#newsLoad > span').text('Загрузить ещё')
-						$('.page404__newsLeft .horizontalBar').append(data);
-						offset+=7;
-						if (current_page == max_pages) $("#newsLoad").remove();
-					} else {
-						$('#newsLoad').remove();
-					}
-				}
-			});
-		});
-	});
-
-	jQuery(function($){
-		$('#eventsLoad').click(function(){
-			$('#eventsLoad > span').text('Загружаю...');
-			var data = {
-				'action': 'events',
-			};
-			$.ajax({
-				url:ajaxurl,
-				data:data,
-				type:'POST',
-				success:function(data){
-					if( data ) {
-						$('#eventsLoad').remove();
-						$('.events__block1List .horizontalBar').append(data);
-					}
-				}
-			});
-		});
-	});
-
-	jQuery(function($){
-		$('#loadmoreSpec').click(function(){
-			let blocks = document.querySelector('.spec__block2Blocks')
-			console.log(blocks)
-			blocks.classList.add('visible')
-
-			$('#loadmoreSpec > span').text('Загружаю...');
-			var data = {
-				'action': 'spec',
-				'query': true_posts3,
-				'offset' : offset,
-			};
-			$.ajax({
-				url:ajaxurl,
-				data:data,
-				type:'POST',
-				success:function(data){
-					if( data ) {
-						$('#loadmoreSpec > span').text('Загрузить ещё')
-						$('.spec__block2Blocks').append(data);
-						offset += 12;
-						current_page++;
-						if (current_page == max_pages3) $("#loadmoreSpec").remove();
-					} else {
-						$('#loadmoreSpec').remove();
-					}
-				}
-			});
-		});
-	});
-
-	jQuery(function($){
-		$('#loadmoreSpec2').click(function(){
-			$('#loadmoreSpec2 > span').text('Загружаю...');
-			let offset = 5;
-			var data = {
-				'dateAndViews': true,
-				'action': 'loadmore',
-				'query': true_posts,
-				'page' : current_page
-			};
-			$.ajax({
-				url:ajaxurl,
-				data:data,
-				type:'POST',
-				success:function(data){
-					if( data ) {
-						$('#loadmoreSpec2 > span').text('Загрузить ещё')
-						$('.spec__block3Bars .horizontalBar').append(data);
-						offset += 5;
-						current_page++;
-						if (current_page == max_pages) $("#loadmoreSpec2").remove();
-					} else {
-						$('#loadmoreSpec2').remove();
-					}
-				}
-			});
-		});
-	});
-
-	jQuery(function($){
-		$('#archiveLoad').click(function(){
-			$('#archiveLoad > span').text('Загружаю...'); // изменяем текст кнопки, вы также можете добавить прелоадер
-			var data = {
-				'action': 'archiveloadmore',
-				'offset': offset,
-			};
-			$.ajax({
-				url:ajaxurl, // обработчик
-				data:data, // данные
-				type:'POST', // тип запроса
-				success:function(data){
-					if( data ) {
-						$('#archiveLoad > span').text('Загрузить ещё')
-						$('.magazine2').append(data);
-						offset += 9;
-					} else {
-						$('#archiveLoad').remove();
-					}
-				}
-			});
-		});
-	});
 })
-
-function slider() {
-	var sliderBigOne = new Swiper('.sliderBigOne', {
-		spaceBetween: 20,
-		slidesPerView: 1.3,
-
-		breakpoints: {
-			768: {
-				slidesPerColumnFill: 'row',
-				slidesPerColumn: 2,
-				slidesPerView: 3,
-			},
-			1201: {
-				slidesPerView: 5,
-			},
-		},
-		scrollbar: {
-			el: '#sliderBigOne-scrollbar',
-			draggable: true,
-			hide: false,
-		},
-	});
-	var sliderBigTwo = new Swiper('.sliderBigTwo', {
-		spaceBetween: 20,
-		slidesPerView: 1.3,
-
-		breakpoints: {
-			768: {
-				slidesPerView: 4,
-			},
-			1024: {
-				slidesPerView: 5,
-			},
-		},
-		scrollbar: {
-			el: '#sliderBigTwo-scrollbar',
-			draggable: true,
-			hide: false,
-		},
-	});
-	var sliderDouble = new Swiper('#sliderMini', {
-		spaceBetween: 15,
-		slidesPerView: 1.3,
-		breakpoints: {
-			576: {
-				slidesPerView: 3,
-			},
-			768: {
-				slidesPerColumnFill: 'row',
-				slidesPerView: 2,
-				allowTouchMove: false,
-				slidesPerColumn: 2,
-			},
-		},
-	});
-	var sliderTriple = new Swiper('#sliderThreeBlock', {
-		spaceBetween: 15,
-		slidesPerView: 1.3,
-		breakpoints: {
-			768: {
-				allowTouchMove: false,
-				slidesPerView: 3,
-			},
-		},
-	});
-	var sliderFourth = new Swiper('#sliderFourthBlock', {
-		spaceBetween: 8,
-		slidesPerView: 1.3,
-
-		breakpoints: {
-			768: {
-				slidesPerView: 4,
-			},
-		},
-		scrollbar: {
-			el: '#sliderFourth-slider',
-			draggable: true,
-			hide: false,
-		},
-	});
-	var sliderFive = new Swiper('#sliderFiveBlock', {
-		spaceBetween: 10,
-		slidesPerView: 1.3,
-
-		breakpoints: {
-			768: {
-				spaceBetween: 25,
-				slidesPerColumnFill: 'row',
-				slidesPerView: 3,
-				allowTouchMove: false,
-				slidesPerColumn: 2,
-			},
-		},
-	});
-}
-document.addEventListener('DOMContentLoaded', slider)
 
 let arrowUp= ''
 let getArrowUpObj = {
@@ -495,7 +258,8 @@ let getArrowUpObj = {
 			if(!arrowUp.classList.contains('visible')) {
 				getArrowUpObj.on()
 			}
-		} else if(pageYOffset < 400) {
+		}
+		else if(pageYOffset < 400) {
 			if(arrowUp.classList.contains('visible')) {
 				getArrowUpObj.off()
 			}
@@ -513,4 +277,80 @@ let getArrowUpObj = {
 }
 if(document.documentElement.clientWidth > 768) {
 	document.addEventListener('DOMContentLoaded', getArrowUpObj.getArrowUp)
+}
+
+let bottomBlock = {
+	up: '',
+	bottom: '',
+	button: '',
+	height: document.documentElement.clientHeight,
+	getBlock(opt = true) {
+		this.up = document.querySelector('.bottomFixedBlock')
+		this.button = document.querySelector('.bottomFixedBlock__collapse')
+		if (this.up == null) return
+
+		if(opt) {
+			let func = this.onScroll.bind(bottomBlock)
+			let click = this.buttonClick.bind(bottomBlock)
+			document.addEventListener('scroll', func)
+			this.button.addEventListener('click', click)
+			setTimeout(this.bottomMargin(), 1000)
+
+		} else {
+			this.up.classList.add('hidden')
+		}
+	},
+	onScroll() {
+		if(pageYOffset > 100 && !((pageYOffset + 300 + this.height) > this.bottom)) {
+			if(!this.up.classList.contains('visible')) {
+				this.on()
+			}
+		}
+		else if(pageYOffset < 100 || (pageYOffset + 300 + this.height) > this.bottom) {
+			if(this.up.classList.contains('visible')) {
+				this.off()
+			}
+		}
+	},
+	on() {
+		this.up.style.display = 'flex'
+		setTimeout(() => this.up.classList.add('visible'), 500)
+	},
+	off() {
+		this.up.classList.remove('visible')
+		setTimeout(() => this.up.style.display = '', 500)
+	},
+	buttonClick() {
+		this.up.classList.add('hidden')
+		localStorage.setItem('bottomBlock', 'hidden')
+	},
+	bottomMargin() {
+		let cookie = document.querySelector('#cookie-notice.cookie-notice-visible')
+		if (cookie != null) {
+			this.up.style.bottom = cookie.offsetHeight + 'px'
+			let buttons = []
+			buttons.push(cookie.querySelector('#cn-accept-cookie'))
+			buttons.push(cookie.querySelector('#cn-close-notice'))
+			for (let but of buttons) {
+				but.addEventListener('click', () => {
+					bottomBlock.up.style.bottom = '0'
+				}, {
+					once: true
+				})
+			}
+
+		}
+	}
+
+}
+
+
+if(localStorage.getItem("bottomBlock") !== "hidden") {
+	setTimeout(() => {
+		bottomBlock.bottom = document.querySelector('body').clientHeight
+		bottomBlock.getBlock()
+	}, 1000)
+}
+else {
+	bottomBlock.getBlock(false)
 }

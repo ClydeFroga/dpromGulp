@@ -43,22 +43,45 @@
 }
 
 .anotherType.bigAndSlider {
-  .bigAndSlider__BigText {
-    padding: 20px 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    > span:first-child {
-      font-size: 14px;
-      line-height: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-right: 0;
+  .imgBlock {
+    padding-top: 73.6%;
+  }
+  .bigAndSlider__Big {
+    margin-right: 0;
+    .imgBlock {
+      height: 100%;
     }
-    > span:last-of-type {
-      font-size: 10px;
-      line-height: 16px;
+    &Text {
+      padding: 20px 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      > span:first-child {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      > span:last-of-type {
+        font-size: 10px;
+        line-height: 16px;
+      }
+      a, span {
+        padding: 0;
+        color: white;
+      }
     }
-    a, span {
-      padding: 0;
-      color: white;
+  }
+  .bigAndSlider__Slider {
+    &Box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      > a {
+        position: relative;
+      }
     }
   }
   .sliderBackground__Small {
@@ -93,7 +116,7 @@
   }
   .anotherType.bigAndSlider {
     margin: 0;
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
     row-gap: 20px;
     .bigAndSlider__Big {
       margin: 0;

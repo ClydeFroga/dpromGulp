@@ -8,11 +8,11 @@
       grid-template-columns: 5fr 5fr;
       column-gap: 20px;
     }
-    .blockWithoutImg__Block:not(:nth-child(n+5)) {
+    .blockWithoutImg__Block:not(:nth-last-child(-n+2)) {
       margin: 0 0 15px 0;
       padding: 0 0 15px 0;
     }
-    .blockWithoutImg__Block:nth-child(n+5) {
+    .blockWithoutImg__Block:nth-last-child(-n+2) {
       margin: 0;
       padding: 0;
       border: none;
