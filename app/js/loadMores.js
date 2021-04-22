@@ -214,3 +214,23 @@ jQuery(function($){
         });
     });
 });
+
+let similar = function($){
+
+    var data = {
+        'action': 'similar',
+        'tags': alltags
+    };
+    $.ajax({
+        url:ajaxurl,
+        data:data,
+        type:'POST',
+        success:function(data){
+            if( data ) {
+
+                $('.part3 .horizontalBar').append(data);
+
+            }
+        }
+    });
+}

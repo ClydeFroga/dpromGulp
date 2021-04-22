@@ -32,11 +32,13 @@ function browsersync() {
 			baseDir: 'app/',
 			middleware: bssi({ baseDir: 'app/', ext: '.html' })
 		},
-		tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt
+		ghostMode: { clicks: false },
 		notify: false,
-		online: true
+		online: false,
+		// tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt
 	})
 }
+
 
 // function typescript() {
 // 	return src('app/js/**/*.ts')
@@ -52,6 +54,7 @@ function scripts() {
 	return src('app/js/app.js')
 		.pipe(webpack({
 			mode: 'production',
+			performance: { hints: false },
 			module: {
 				rules: [
 					{
@@ -78,12 +81,14 @@ function styles() {
 	// return src('app/sass/main.scss')
 	return src('app/sass/specMWR.scss')
 		.pipe(sass({ outputStyle: 'compressed' }))
-		.pipe(autoprefixer({ grid: 'autoplace' }))
 		.pipe(rename('mwr2021.css'))
 		// .pipe(rename('style.css'))
 		.pipe(dest('app/sass'))
 		// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3"))
 		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
+		// .pipe(autoprefixer({ grid: 'autoplace' }))
+		// .pipe(rename('styleIE.css'))
+		// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
 		.pipe(browserSync.stream())
 }
 
@@ -134,7 +139,7 @@ function startwatch() {
 	watch('app/sass/svg/assets/*', { usePolling: true }, svg)
 	watch('app/sass/**/*.scss', { usePolling: true }, styles)
 	// watch(['app/js/**/*.ts'], { usePolling: true }, typescript)
-	watch(['app/js/app.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
+	watch(['app/js/**.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
 	watch('app/images/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
 	watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
 }

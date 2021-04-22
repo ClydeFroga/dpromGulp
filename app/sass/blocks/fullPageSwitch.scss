@@ -1,0 +1,108 @@
+.testFull {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  display: none;
+  transition: all .5s cubic-bezier(.9,.03,.69,.22);
+  &:before {
+    bottom: 0;
+    content: '';
+    background: linear-gradient(180deg, rgba(255,255,255,0) 1.04%, rgba(0,0,0,0.51) 70.31%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  &__main {
+    width: 100%;
+    height: 100%;
+  }
+  h1.release {
+    display: block;
+    animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  h1 {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    font-size: 80px;
+    left: 40px;
+    line-height: 90px;
+  }
+  &.full {
+    display: block;
+    width: 100% !important;
+    height: 100vh !important;
+  }
+  &__read {
+    display: none;
+    align-items: center;
+    position: absolute;
+    right: 40px;
+    color: white;
+    bottom: 40px;
+    font-size: 20px;
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    svg {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+    &.release {
+      display: flex;
+    }
+  }
+  &__logo {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    &.release {
+      display: block;
+    }
+  }
+  //#testFull__anim {
+  //  width: 30px;
+  //  height: 30px;
+  //  position: absolute;
+  //  left: 40px;
+  //  bottom: 40px;
+  //}
+}
+
+@keyframes focus-in-expand {
+  0% {
+    //letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}

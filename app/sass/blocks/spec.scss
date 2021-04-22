@@ -1,7 +1,6 @@
 .spec {
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 30px;
   &__block1 {
     display: grid;

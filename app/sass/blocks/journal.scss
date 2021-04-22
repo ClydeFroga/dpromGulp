@@ -51,7 +51,9 @@
         &__blocks {
           margin-top: 0;
           &Block {
-            max-height: 85px;
+            >div {
+              max-height: 85px;
+            }
           }
         }
       }
@@ -229,9 +231,6 @@
         span {
           text-align: left;
           display: block;
-        }
-        &Block {
-          //justify-content: center;
         }
       }
       &Sidebar {
