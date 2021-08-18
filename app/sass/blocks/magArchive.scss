@@ -41,10 +41,6 @@
       column-break-inside: avoid;
       transition: ease-in .24s;
 
-      &:hover {
-        transform: scale(1.04);
-      }
-
     }
     &__anchor{
       display: flex;
@@ -66,9 +62,8 @@
     }
 
     &:hover div:not(:hover) {
-      transform: scale(.96);
       filter: grayscale(.64);
-      opacity: 0.8;
+      opacity: 0.6;
     }
 
   }

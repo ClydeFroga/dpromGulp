@@ -78,17 +78,26 @@ function scripts() {
 }
 
 function styles() {
-	// return src('app/sass/main.scss')
-	return src('app/sass/specMWR.scss')
+	return src('app/sass/main.scss')
+	// return src('app/sass/specMWR.scss')
 		.pipe(sass({ outputStyle: 'compressed' }))
-		.pipe(rename('mwr2021.css'))
-		// .pipe(rename('style.css'))
+		// .pipe(rename('mwr2021.css'))
+		.pipe(rename('style.css'))
 		.pipe(dest('app/sass'))
-		// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3"))
-		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
+		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3"))
+		// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
 		// .pipe(autoprefixer({ grid: 'autoplace' }))
 		// .pipe(rename('styleIE.css'))
 		// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
+		.pipe(browserSync.stream())
+}
+
+function styleMiner() {
+	return src('app/sass/miner.scss')
+		.pipe(sass({ outputStyle: 'compressed' }))
+		.pipe(rename('miner.css'))
+		.pipe(dest('app/sass'))
+		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
 		.pipe(browserSync.stream())
 }
 
@@ -138,6 +147,7 @@ function deploy() {
 function startwatch() {
 	watch('app/sass/svg/assets/*', { usePolling: true }, svg)
 	watch('app/sass/**/*.scss', { usePolling: true }, styles)
+	watch('app/sass/**/*.scss', { usePolling: true }, styleMiner)
 	// watch(['app/js/**/*.ts'], { usePolling: true }, typescript)
 	watch(['app/js/**.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
 	watch('app/images/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
@@ -146,9 +156,10 @@ function startwatch() {
 
 exports.scripts = scripts
 exports.styles  = styles
+exports.styleMiner  = styleMiner
 // exports.typeScript  = typescript
 exports.images  = images
 exports.deploy  = deploy
 exports.assets  = series(scripts, styles, images)
 exports.build   = series(cleandist, scripts, styles, images, buildcopy, buildhtml)
-exports.default = series(scripts, styles, parallel(browsersync, startwatch))
+exports.default = series(scripts, styleMiner, styles, parallel(browsersync, startwatch))

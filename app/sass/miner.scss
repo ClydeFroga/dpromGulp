@@ -1,0 +1,677 @@
+.minerDay {
+	&__header {
+		position: relative;
+		min-height: 403px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-image: url("../img/minerDay.png");
+		&Left {
+			position: absolute;
+			z-index: 1;
+			bottom: 10%;
+			color: white;
+			padding: 0 15% 0 3%;
+			h1 {
+				font-weight: bold;
+				font-size: 48px;
+				line-height: 20px;
+			}
+			br {
+				line-height: inherit;
+			}
+			p {
+				letter-spacing: 0.4px;
+				font-size: 14px;
+				line-height: 16px;
+			}
+		}
+		&Right {
+			position: absolute;
+			z-index: 1;
+			top: 10%;
+			right: 0;
+			color: white;
+			padding: 0 5% 0 0;
+			img {
+				padding: 10px 15px;
+				background-color: white;
+			}
+			a {
+				font-size: inherit;
+				line-height: inherit;
+				color: orange;
+				text-decoration: underline;
+			}
+			p {
+				margin-top: 0;
+				margin-bottom: 5px;
+				font-size: 10px;
+				line-height: 16px;
+				letter-spacing: 0.4px;
+
+			}
+		}
+	}
+	> section {
+		margin-top: 60px;
+	}
+	.h2TitleBorder {
+		border-bottom-width: 1px;
+		position: relative;
+		padding-top: 25px;
+		svg {
+			width: 58.91px;
+			height: 55.91px;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+	&__main {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px 30px;
+		&Block {
+			.imgBlock {
+				margin-bottom: 0;
+				padding-top: 67%;
+			}
+			.dateAndViews {
+				span.category {
+					font-weight: bold;
+					font-size: 10px;
+					line-height: 16px;
+					letter-spacing: 1.5px;
+					text-transform: uppercase;
+				}
+				div.category {
+					flex-wrap: wrap;
+					gap: 3px;
+					span {
+						flex: 0 0 100%;
+						width: 100%;
+						color: #A8A8A8;
+						font-weight: bold;
+						font-size: 9px;
+						line-height: 14px;
+						text-transform: uppercase;
+					}
+				}
+				margin: 25px 0 20px 0;
+			}
+			&Title {
+				font-weight: 600;
+				font-size: 12px;
+				line-height: 20px;
+				letter-spacing: 0.25px;
+				display: block;
+			}
+			&Desc {
+				margin-top: 15px;
+				font-size: 10px;
+				line-height: 14px;
+				letter-spacing: 0.4px;
+				display: block;
+			}
+			&Read {
+				font-weight: bold;
+				font-size: 10px;
+				line-height: 22px;
+				text-transform: uppercase;
+				
+				color: #BDBDBD;
+			}
+			> div {
+				padding: 0 20px 25px 20px;
+			}
+			&:hover {
+				background-color: #FAFAFA;
+				box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+				.minerDay__mainBlockRead {
+					color: #AE8962;
+				}
+				
+			}
+		}
+		&Spec {
+			position: relative;
+			color: white;
+			background-repeat: no-repeat !important;
+			background-size: cover !important;
+			background-position: center !important;
+			> .dateAndViews{
+				position: absolute;
+				top: 5%;
+				left: 4%;
+				.category {
+					color: white;
+					font-weight: bold;
+					font-size: 10px;
+					line-height: 16px;
+					letter-spacing: 1.5px;
+					text-transform: uppercase;
+				}
+			}
+			&Title {
+				font-weight: 600;
+				font-size: 16px;
+				line-height: 20px;
+				letter-spacing: 0.25px;
+				display: block;
+				margin-bottom: 15px;
+			}
+			&Desc {
+				font-size: 12px;
+				line-height: 14px;
+				letter-spacing: 0.4px;
+				display: block;
+				margin-bottom: 40px;
+			}
+			.line {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				> div:first-child {
+					flex: 0 0 50%;
+					.category {
+						flex-wrap: wrap;
+						gap: 3px;
+						span {
+							flex: 0 0 100%;
+							width: 100%;
+							color: white;
+							font-weight: bold;
+							font-size: 9px;
+							line-height: 14px;
+							text-transform: uppercase;
+						}
+					}
+				}
+				> span {
+					padding: 10px 50px;
+					border: 2px solid #FAFAFA;
+					font-weight: bold;
+					font-size: 10px;
+					line-height: 22px;
+				}
+			}
+			> div:last-child {
+				position: absolute;
+				bottom: 10%;
+				padding: 0 5%;
+				
+			}
+		}
+		&.third {
+			.minerDay__mainSpec {
+				grid-column-start: 3;
+				grid-column-end: 5;
+				grid-row-start: 1;
+				grid-row-end: 2;
+			}
+		}
+		&.first{
+			.minerDay__mainSpec {
+				grid-column-start: 1;
+				grid-column-end: 3;
+				grid-row-start: 1;
+				grid-row-end: 2;
+			}
+		}
+	}
+	&.dark {
+		margin-top: 50px;
+		padding-top: 40px;
+		padding-bottom: 70px;
+		background: #E5E5E5;
+	}
+	
+	.loadmore {
+		width: 100%;
+		display: none;
+		margin: 60px 0;
+		font-weight: bold;
+		font-size: 10px;
+		line-height: 22px;
+		color: white;
+		max-width: unset;
+		text-align: center;
+	}
+	
+	&.brown {
+		height: 700px;
+		display: flex;
+		margin: 80px 0;
+		position: relative;
+		.container {
+			margin: auto;
+		}
+		background-image: url('../svg/assets/diamond.svg'), url('../svg/assets/diamond.svg'), url('../svg/assets/diamond.svg'), linear-gradient(180deg, #AE8962 0%, #9E6B36 100%);
+		background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+		background-position: left, 100% 320%, 80% -15%, right;
+		background-size: 35%, 25%, 10%, cover;
+	}
+	.minerSlider {
+		min-width: 0;
+		overflow: hidden;
+		&__block {
+			margin: auto;
+			display: flex;
+			img {
+				margin-right: 50px;
+				height: auto;
+				width: 100%;
+				flex: 0 0 35%;
+			}
+			div {
+				display: flex;
+				flex-direction: column;
+				margin: auto;
+				color: white;
+				a {
+					font-size: inherit;
+					line-height: inherit;
+					color: orange;
+					text-decoration: underline;
+				}
+				br {
+					line-height: inherit;
+				}
+				p:first-child {
+					font-weight: bold;
+					font-size: 18px;
+					line-height: 22px;
+					letter-spacing: 0.4px;
+					margin-bottom: 35px;
+				}
+				p:last-child {
+					font-size: 14px;
+					line-height: 17px;
+					letter-spacing: 0.4px;
+				}
+			}
+		}
+		&__buttons {
+			position: relative;
+			right: -85%;
+			bottom: 50px;
+			max-width: 150px;
+			&Pag {
+				z-index: 9;
+				bottom: -11px;
+				color: white;
+				span {
+					color: white;
+					font-size: 14px;
+					line-height: 17px;
+					letter-spacing: 0.4px;
+					text-transform: lowercase;
+				}
+			}
+		}
+		.swiper-button-prev, .swiper-button-next {
+			color: white;
+		}
+	}
+	.part4 {
+		grid-template-columns: 1fr;
+		.newMagazine {
+			&:before {
+				left: 5%;
+			}
+		}
+
+		.newMagazine__bottom {
+			display: grid;
+			grid-template-columns: .7fr .5fr 1fr;
+			column-gap: 30px;
+			padding-right: 0;
+			padding-left: 0;
+			&Img {
+				order: unset !important;
+				display: flex;
+				align-items: center;
+				padding-bottom: 50px;
+				img {
+					height: auto;
+					max-width: unset;
+					max-height: 100%;
+					
+				}
+			}
+			&Text {
+				justify-content: center;
+				> *:not(:last-child) {
+					margin-bottom: 15px;
+				}
+				padding-bottom: 50px;
+
+			}
+			&Right {
+				.horizontalBar {
+					max-height: 530px;
+					overflow-y: auto;
+					.horizontalBarFirst {
+						padding-top: 17%;
+					}
+					&__Right {
+						> a {
+							font-weight: 600;
+							font-size: 14px;
+							line-height: 20px;
+							letter-spacing: 0.25px;
+						}
+					}
+					> div > a {
+						background-color: #fafafa;
+						margin-right: 5px;
+					}
+					&::-webkit-scrollbar {
+						width: 7px;
+					}
+					&::-webkit-scrollbar-track {
+						background: #fafafa;
+					}
+					&::-webkit-scrollbar-thumb {
+						background: #b1987d;
+					}
+					scrollbar-width: thin;
+				}
+			}
+		}
+	}
+	.part3 {
+		grid-template-columns: 1fr;
+		.loadmore, .h2Title  {
+			grid-column-start: 1;
+			grid-column-end: 3;
+			display: block;
+		}
+		.horizontalBar {
+			align-items: center;
+		}
+		.horizontalBar__RightText {
+			font-weight: normal;
+			font-size: 12px;
+			line-height: 16px;
+			letter-spacing: 0.4px;
+		}
+	}
+	~ footer {
+		margin-top: 0;
+	}
+	&.gray {
+		background-color: #fafafa;
+		.h2Title {
+			margin-bottom: 60px;
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr 1px) 1fr;
+		padding-bottom: 60px;
+		gap: 3%;
+		border-bottom: 1px solid #B1987D;
+		
+		&Col {
+			padding-left: 10%;
+			&Title {
+				display: inline-flex;
+				align-items: center;
+				width: 100%;
+				justify-content: flex-start;
+				margin-bottom: 60px;
+				font-size: 20px;
+				line-height: 32px;
+				letter-spacing: 0.15px;
+				text-transform: uppercase;
+				svg {
+					margin-right: 10%;
+					width: 59px;
+					height: 56px;
+				}
+				
+			}
+			&Links {
+				a {
+					display: block;
+					font-weight: 600;
+					font-size: 14px;
+					line-height: 20px;
+					letter-spacing: 0.25px;
+					color: #A8A8A8;
+					&:hover {
+						color: #9E6B36;
+					}
+					padding: 5px 0;
+					&:not(:last-child) {
+						//margin-bottom: 10px;
+					}
+				}
+			}
+		}
+		&Line {
+			height: 100%;
+			border-right: 1px solid rgba(0, 0, 0, 0.1);
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.minerDay {
+		&__header {
+			min-height: 536px;
+			
+			&Left {
+				bottom: 5%;
+				h1 {
+					font-weight: bold;
+					font-size: 32px;
+					line-height: 120%;
+				}
+				br {
+					margin-bottom: 20px;
+				}
+				
+			}
+		}
+		&__main {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 30px;
+			&.third {
+				.minerDay__mainSpec {
+					min-height: 500px;
+					grid-column-start: 1;
+					grid-column-end: 3;
+				}
+			}
+			&.first {
+				.minerDay__mainSpec {
+					min-height: 500px;
+					grid-row-start: 2;
+					grid-row-end: 4;
+				}
+			}
+		}
+		&.brown {
+			height: unset;
+			padding: 50px 0;
+			background-image: url('../svg/assets/diamond.svg'), url('../svg/assets/diamond.svg'), linear-gradient(180deg, #AE8962 0%, #9E6B36 100%);
+			background-repeat: no-repeat, no-repeat, no-repeat;
+			background-position: left 70%, 180% 50%, right;
+			background-size: 35%, 60%, cover;
+		}
+		.minerSlider {
+			&__block {
+				flex-direction: column-reverse;
+				img {
+					margin-top: 50px;
+					margin-right: unset;
+					max-width: 70%;
+					flex: 0 0 100%;
+				}
+			}
+			&__buttons {
+				right: -80%;
+			}
+		}
+		.part4 {
+			.newMagazine {
+				&:before {
+					left: 0;
+					top: -50%;
+				}
+			}
+			.newMagazine__bottom {
+				grid-template-columns: 1fr 1fr;
+				&Right {
+					grid-column-start: 1;
+					grid-column-end: 3;
+				}
+			}
+		}
+		.part3 {
+			.horizontalBar {
+				grid-template-columns: 1fr;
+			}
+		}
+		&__list {
+			grid-template-columns: 1fr;
+			row-gap: 100px;
+			
+			&Col {
+				padding-left: 0;
+				&Links {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					column-gap: 5%;
+					a {
+
+					}
+				}
+
+			}
+			&Line {
+				display: none;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.minerDay {
+		&__header {
+			min-height: 630px;
+			
+			&Left {
+				bottom: 25%;
+			}
+			&Right {
+				max-height: 25%;
+				top: unset;
+				bottom: 3%;
+				right: unset;
+				padding-left: 3%;
+			}
+		}
+		&__main {
+			grid-template-columns: 1fr;
+			&Spec {
+				.line {
+					flex-direction: column;
+					align-items: flex-start;
+					> div:first-child {
+						flex: unset;
+						margin-bottom: 40px;
+					}
+				}
+
+			}
+			&.third {
+				.minerDay__mainSpec {
+					min-height: 550px;
+					grid-column-end: 2;
+				}
+			}
+			&.first {
+				.minerDay__mainSpec {
+					min-height: 550px;
+					grid-column-end: 2;
+					grid-row-start: 3;
+					grid-row-end: 5;
+				}
+			}
+		}
+		.loadmore {
+			display: block;
+		}
+		.minerSlider {
+			position: relative;
+			&__block {
+				margin-top: 70px;
+				img {
+					max-width: unset;
+				}
+			}
+			&__buttons {
+				position: absolute;
+				top: 30px;
+				bottom: unset;
+				right: 0;
+				width: 150px;
+			}
+		}
+		.part4 {
+			.newMagazine__bottom {
+				grid-template-columns: 1fr;
+				&Text {
+					display: none;
+				}
+				&Right {
+					grid-column-end: 2;
+					.horizontalBar {
+						max-height: unset;
+						&__Right {
+							> a {
+								font-size: 9px;
+								line-height: 12px;
+							}
+						}
+					}
+				}
+				.loadmore {
+					background-color: #BDBDBD;
+				}
+			}
+		}
+		.part3 {
+			.horizontalBar {
+				.horizontalBarFirst  {
+					display: none;
+				}
+				.horizontalBar__RightTitle {
+					font-size: 12px !important;
+					line-height: 16px !important;
+				}
+			}
+		}
+		&__list {
+			row-gap: 50px;
+			
+			&Col {
+				padding-left: 0;
+				&Links {
+
+					grid-template-columns: 1fr;
+
+					a {
+					
+					}
+				}
+				
+			}
+
+		}
+	}
+}

@@ -225,8 +225,13 @@
       }
       .sections__blocks {
         grid-template-columns: 1fr;
+        &Block div {
+          padding: 10px;
+        }
+
         svg {
           margin-right: 0 !important;
+          max-height: 30px;
         }
         span {
           text-align: left;

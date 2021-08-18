@@ -6,7 +6,6 @@
     row-gap: 25px;
     grid-template:
     "left sticky sidebar"
-    "comments comments comments"
     /650px 2.5fr 300px
   ;
 
@@ -156,7 +155,6 @@
           margin: 0;
         }
         table {
-          table-layout: fixed;
           width: 100%;
           border-collapse: collapse;
           max-width: 100%;
@@ -393,7 +391,6 @@
       grid-template:
     "left sticky sidebar"
     "foxyLong foxyLong foxyLong"
-    "comments comments comments"
     /5fr 2.5fr 300px
     ;
     }
@@ -406,7 +403,6 @@
       grid-template:
       "left sidebar"
       "foxyLong foxyLong"
-      "comments comments"
       /1fr 160px
     ;
       &Left {
@@ -466,7 +462,6 @@
       grid-template:
       "left"
       "foxyLong"
-      "comments"
       "sidebar"
       /1fr
     ;

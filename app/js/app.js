@@ -8,12 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		let bot = document.querySelector('.header__bot')
 		let hiddenHeight = document.querySelector('.header__hidden').scrollHeight
 		let top = document.querySelector('.header__top')
-
+		
 		top.classList.remove('release')
 		bot.style.marginTop = `${hiddenHeight + 30}px`;
 		but.style.opacity = '0';
 		setTimeout(() => but.style.display = 'none', 500)
 		block.classList.add('expanded')
+		
 	}
 	
 	let expandBut = document.querySelector('.header__topButtons > span:first-child')
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			setTimeout(() => but.style.opacity = '1', 100)
 		} else {
 			block.classList.add('collapsed')
+			block.style.height = '50px'
 			setTimeout(() => top.classList.add('release'), 100)
 			localStorage.setItem('topCollapsed', 'true')
 		}
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		let block = document.querySelector('.header__container')
 		block.classList.remove('collapsed')
 		localStorage.removeItem('topCollapsed')
-
+		makeHeight()
 		setTimeout(expand, 200)
 	}
 
@@ -61,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (expandAgainBut !== null) {
 		expandAgainBut.addEventListener('mouseup', expandAgain)
 	}
-
 
 	function subMenu(menu, parent) {
 		parent.classList.toggle('open')

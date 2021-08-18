@@ -152,7 +152,9 @@
         max-height: 640px;
       }
     }
-
+    &__mid .sidebarNews .horizontalBar {
+      justify-content: space-around;
+    }
   }
 }
 

@@ -91,5 +91,26 @@ function slider() {
             },
         },
     });
+    let minerSlider = document.getElementById('minerSlider');
+    var minerSliderC = new Swiper(minerSlider, {
+        spaceBetween: 0,
+        slidesPerView: 1,
+        pagination: {
+            el: "#minerSlider__buttonsPag",
+            clickable: false,
+            type: 'custom',
+            renderCustom: function (minerSlider, current, total) {
+                return `<span>${current}</span> из <span>${total}</span>`
+            }
+        },
+        navigation: {
+            prevEl: '#minerSlider__buttonsPrev',
+            nextEl: '#minerSlider__buttonsNext',
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+    });
 }
 document.addEventListener('DOMContentLoaded', slider)
