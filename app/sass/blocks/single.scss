@@ -24,9 +24,10 @@
       }
       .dateAndViews2 {
         text-transform: uppercase;
+        flex-wrap: wrap;
       }
       &Text {
-        margin-top: 60px;
+        margin-top: 30px;
         position: relative;
         h2 {
           font-weight: bold;
@@ -126,7 +127,7 @@
           figcaption {
             margin-top: 15px;
             font-weight: bold;
-            font-size: 10px;
+            font-size: 12px;
             line-height: 16px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -260,102 +261,8 @@
         max-width: 250px;
         position: sticky;
         top: 25px;
-        background-color: $grey5;
-        padding: 40px;
-        > span:not(:last-child) {
-          margin-bottom: 20px;
-          display: block;
-        }
-        > span:nth-child(1), > span:nth-child(2) {
-          strong {
-            font-weight: bold;
-          }
-          font-size: 16px;
-          line-height: 20px;
-        }
-        > span:nth-child(3) {
-          color: $grey4;
-          letter-spacing: 0.4px;
-        }
-        .sponsor {
-          margin: 30px auto 0 auto;
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
-          align-items: center;
-          span {
-            font-size: 12px;
-            line-height: 16px;
-            color: $grey4;
-            letter-spacing: 0.4px;
-          }
-        }
-        > div {
-          display: flex;
-          justify-content: space-between;
-          a:not(:last-child) {
-            margin-right: 5px;
-          }
-        }
-        img {
-          margin-bottom: 15px;
-          display: flex;
-
-        }
-        &Thumbs {
-          .thumbs-rating-container {
-            position: relative;
-            display: flex;
-          }
-
-          .thumbs-rating-container button {
-            cursor: pointer;
-          }
-          .thumbs-rating-already-voted {
-            margin-left: 30px;
-            width: max-content;
-            display: none;
-            &.thumbs-rating-show {
-              opacity: 1;
-              z-index: 5;
-              display: block;
-              position: absolute;
-              background-color: #9e6b36;
-              padding: 5px 10px;
-              bottom: 120%;
-              right: 0;
-              color: white;
-            }
-          }
-          .thumbs-rating-container .thumbs-rating-up,
-          .thumbs-rating-container .thumbs-rating-down {
-            margin-left: 10px;
-            border: none;
-            background-color: transparent;
-            width: 19px;
-            height: 18px;
-            display: block;
-            background-repeat: no-repeat;
-          }
-          .thumbs-rating-container .thumbs-rating-up.thumbs-rating-voted {
-            background-image: url("svg/assets/thumbUpVoted.svg");
-          }
-          .thumbs-rating-container .thumbs-rating-down.thumbs-rating-voted {
-            background-image: url("svg/assets/thumbDownVoted.svg");
-          }
-          .thumbs-rating-container .thumbs-rating-up {
-            background-image: url("svg/assets/thumbUp.svg");
-            &:hover {
-              background-image: url("svg/assets/thumbUpVoted.svg");
-            }
-          }
-          .thumbs-rating-container .thumbs-rating-down {
-            background-image: url("svg/assets/thumbDown.svg");
-            &:hover {
-              background-image: url("svg/assets/thumbDownVoted.svg");
-            }
-          }
-          display: flex;
+        > div:not(:first-child) {
+          margin-top: 25px;
         }
       }
     }
@@ -371,6 +278,19 @@
 
     .comments {
       grid-area: comments;
+    }
+    &.specFox {
+      grid-template:
+      "mwrBanner mwrBanner sidebar"
+      "left sticky sidebar"
+      ". . sidebar"
+      /650px 2.5fr 300px;
+  
+      .foxyFull {
+        margin-top: 0;
+        align-self: flex-start;
+        grid-area: mwrBanner;
+      }
     }
   }
   &__other {
@@ -393,6 +313,9 @@
     "foxyLong foxyLong foxyLong"
     /5fr 2.5fr 300px
     ;
+      &.specFox {
+        grid-template-columns:5fr 2.5fr 300px;
+      }
     }
   }
 }
@@ -451,6 +374,13 @@
           margin: 0;
         }
       }
+      &.specFox {
+        grid-template:
+      "mwrBanner sidebar"
+      "left sidebar"
+      "foxyLong foxyLong"
+      /1fr 160px;
+      }
     }
   }
 }
@@ -483,7 +413,7 @@
           line-height: 27px;
           .wp-block-image {
             figcaption {
-              font-size: 9px;
+              font-size: 12px;
               line-height: 20px;
             }
           }
@@ -526,6 +456,14 @@
           display: grid;
         }
       }
+      &.specFox {
+        grid-template:
+      "mwrBanner"
+      "left"
+      "foxyLong"
+      "sidebar"
+      /1fr;
+      }
     }
   }
 }
@@ -534,6 +472,9 @@
   .single {
     &__content {
       &Left {
+        p {
+          word-break: break-word;
+        }
         table {
           word-break: break-all;
         }

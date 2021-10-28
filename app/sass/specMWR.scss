@@ -1,4 +1,4 @@
-.MWRBody {
+.mwrWrapper {
 	transition-duration: 0s;
 
 	footer {
@@ -137,7 +137,7 @@
 	}
 }
 
-.MWRBody.old {
+.newSpecial.mwr {
 	.shieldMWR {
 		display: grid;
 		grid-template-columns: 26px 1fr;
@@ -154,10 +154,6 @@
 
 	background: url("../img/mwrBack.png") top -7vw right -20vw / 40vw no-repeat,
 	url("../img/mwr2021.png") top 70% right -25% / 40% no-repeat;
-}
-
-.mwrWrapper.old {
-	background: url("../img/mwrBack.png") bottom -20vw left -20vw / 40vw no-repeat;
 }
 
 .mwrWrapper {
@@ -246,20 +242,6 @@
 	}
 }
 
-.single__content.mwrInc {
-	grid-template:
-  "mwrBanner mwrBanner sidebar"
-  "left sticky sidebar"
-  ". . sidebar"
-  /650px 2.5fr 300px;
-
-	.foxyFull {
-		margin-top: 0;
-		align-self: flex-start;
-		grid-area: mwrBanner;
-	}
-}
-
 .brandsList {
 	display: grid;
 	gap: 30px;
@@ -314,22 +296,11 @@
 }
 
 
-@media (max-width: 1279px) {
-	.single__content.mwrInc {
-		grid-template-columns:5fr 2.5fr 300px;
-	}
-}
+
 
 @media (max-width: 1023px) {
 	.brandsList {
 		grid-template-columns: repeat(2, 1fr);
-	}
-	.single__content.mwrInc {
-		grid-template:
-      "mwrBanner sidebar"
-      "left sidebar"
-      "foxyLong foxyLong"
-      /1fr 160px;
 	}
 	.mwrWrapper {
 		.part8.block2 {
@@ -425,14 +396,6 @@
 			top: unset;
 			bottom: 0;
 		}
-	}
-	.single__content.mwrInc {
-		grid-template:
-      "mwrBanner"
-      "left"
-      "foxyLong"
-      "sidebar"
-      /1fr;
 	}
 	.mwrWrapper {
 		.MWRBanner {
@@ -552,5 +515,4 @@
 			}
 		}
 	}
-
 }

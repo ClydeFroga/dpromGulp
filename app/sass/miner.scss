@@ -5,7 +5,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
-		background-image: url("../img/minerDay.png");
+		background-image: url("../img/minerDay2.jpg");
 		&Left {
 			position: absolute;
 			z-index: 1;
@@ -22,8 +22,8 @@
 			}
 			p {
 				letter-spacing: 0.4px;
-				font-size: 14px;
-				line-height: 16px;
+				font-size: 18px;
+				line-height: 20px;
 			}
 		}
 		&Right {
@@ -34,8 +34,8 @@
 			color: white;
 			padding: 0 5% 0 0;
 			img {
-				padding: 10px 15px;
-				background-color: white;
+				//padding: 10px 15px;
+				//background-color: white;
 			}
 			a {
 				font-size: inherit;
@@ -106,13 +106,15 @@
 				line-height: 20px;
 				letter-spacing: 0.25px;
 				display: block;
+				margin-top: 45px;
 			}
 			&Desc {
 				margin-top: 15px;
-				font-size: 10px;
+				font-size: 12px;
 				line-height: 14px;
 				letter-spacing: 0.4px;
 				display: block;
+				margin-bottom: 45px;
 			}
 			&Read {
 				font-weight: bold;
@@ -140,6 +142,8 @@
 			background-repeat: no-repeat !important;
 			background-size: cover !important;
 			background-position: center !important;
+
+
 			> .dateAndViews{
 				position: absolute;
 				top: 5%;
@@ -226,7 +230,6 @@
 		padding-bottom: 70px;
 		background: #E5E5E5;
 	}
-	
 	.loadmore {
 		width: 100%;
 		display: none;
@@ -238,7 +241,6 @@
 		max-width: unset;
 		text-align: center;
 	}
-	
 	&.brown {
 		height: 700px;
 		display: flex;
@@ -246,6 +248,8 @@
 		position: relative;
 		.container {
 			margin: auto;
+			//padding-top: 80px;
+			//padding-bottom: 80px;
 		}
 		background-image: url('../svg/assets/diamond.svg'), url('../svg/assets/diamond.svg'), url('../svg/assets/diamond.svg'), linear-gradient(180deg, #AE8962 0%, #9E6B36 100%);
 		background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
@@ -258,6 +262,7 @@
 		&__block {
 			margin: auto;
 			display: flex;
+			align-items: center;
 			img {
 				margin-right: 50px;
 				height: auto;
@@ -398,14 +403,15 @@
 			letter-spacing: 0.4px;
 		}
 	}
-	~ footer {
-		margin-top: 0;
-	}
 	&.gray {
 		background-color: #fafafa;
 		.h2Title {
 			margin-bottom: 60px;
 		}
+	}
+	&.quiz {
+		position: relative;
+		z-index: 2;
 	}
 	&__list {
 		display: grid;
@@ -458,6 +464,12 @@
 	}
 }
 
+.fullPageDelete {
+	~ footer {
+		margin-top: 0;
+	}
+}
+
 @media (max-width: 1023px) {
 	.minerDay {
 		&__header {
@@ -505,11 +517,16 @@
 		.minerSlider {
 			&__block {
 				flex-direction: column-reverse;
+				transition: height 0s;
+				height: 0;
 				img {
 					margin-top: 50px;
 					margin-right: unset;
 					max-width: 70%;
 					flex: 0 0 100%;
+				}
+				&.swiper-slide-active {
+					height: unset;
 				}
 			}
 			&__buttons {

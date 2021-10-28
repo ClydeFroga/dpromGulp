@@ -1,3 +1,4 @@
+let preprocessor = 'sass'
 let fileswatch = 'html,htm,txt,json,md,woff2' // List of files extensions for watching & hard reload
 
 const { src, dest, parallel, series, watch } = require('gulp')
@@ -13,6 +14,8 @@ const imagemin     = require('gulp-imagemin')
 const newer        = require('gulp-newer')
 const rsync        = require('gulp-rsync')
 const del          = require('del')
+const cleancss     = require('gulp-clean-css')
+const sassglob     = require('gulp-sass-glob')
 // const ts 		   = require("gulp-typescript");
 
 function svg() {
@@ -78,17 +81,35 @@ function scripts() {
 }
 
 function styles() {
-	return src('app/sass/main.scss')
-	// return src('app/sass/specMWR.scss')
-		.pipe(sass({ outputStyle: 'compressed' }))
-		// .pipe(rename('mwr2021.css'))
+	return src([`app/${preprocessor}/main.scss`, `!app/${preprocessor}/_*.*`])
+		.pipe(eval(`${preprocessor}glob`)())
+		.pipe(eval(preprocessor)())
+		.pipe(autoprefixer())
+		.pipe(cleancss({ level: { 1: { specialComments: 0 } },/* format: 'beautify' */ }))
 		.pipe(rename('style.css'))
-		.pipe(dest('app/sass'))
 		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3"))
-		// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
-		// .pipe(autoprefixer({ grid: 'autoplace' }))
-		// .pipe(rename('styleIE.css'))
-		// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
+		.pipe(browserSync.stream())
+}
+
+// function styles() {
+// 	return src('app/sass/main.scss')
+// 		.pipe(sass({ outputStyle: 'compressed' }))
+// 		.pipe(rename('style.css'))
+// 		.pipe(dest('app/sass'))
+// 		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3"))
+//
+// 		// .pipe(autoprefixer({ grid: 'autoplace' }))
+// 		// .pipe(rename('styleIE.css'))
+// 		// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
+// 		.pipe(browserSync.stream())
+// }
+
+function stylesMWR() {
+	return src('app/sass/specMWR.scss')
+		.pipe(sass({ outputStyle: 'compressed' }))
+		.pipe(rename('mwr2021.css'))
+		.pipe(dest('app/sass'))
+		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
 		.pipe(browserSync.stream())
 }
 
@@ -98,6 +119,9 @@ function styleMiner() {
 		.pipe(rename('miner.css'))
 		.pipe(dest('app/sass'))
 		.pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
+			// .pipe(autoprefixer({grid: "autoplace", flexbox: true}))
+			// .pipe(rename("styleIEMiner.css"))
+			// .pipe(dest("C:\\xampp\\htdocs\\dprom\\wp-content\\themes\\dprom3\\style"))
 		.pipe(browserSync.stream())
 }
 
@@ -147,7 +171,8 @@ function deploy() {
 function startwatch() {
 	watch('app/sass/svg/assets/*', { usePolling: true }, svg)
 	watch('app/sass/**/*.scss', { usePolling: true }, styles)
-	watch('app/sass/**/*.scss', { usePolling: true }, styleMiner)
+	watch('app/sass/miner.scss', { usePolling: true }, styleMiner)
+	watch('app/sass/specMWR.scss', { usePolling: true }, stylesMWR)
 	// watch(['app/js/**/*.ts'], { usePolling: true }, typescript)
 	watch(['app/js/**.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
 	watch('app/images/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
@@ -156,10 +181,11 @@ function startwatch() {
 
 exports.scripts = scripts
 exports.styles  = styles
+exports.stylesMWR  = stylesMWR
 exports.styleMiner  = styleMiner
 // exports.typeScript  = typescript
 exports.images  = images
 exports.deploy  = deploy
 exports.assets  = series(scripts, styles, images)
 exports.build   = series(cleandist, scripts, styles, images, buildcopy, buildhtml)
-exports.default = series(scripts, styleMiner, styles, parallel(browsersync, startwatch))
+exports.default = series(scripts, styleMiner,stylesMWR, styles, parallel(browsersync, startwatch))

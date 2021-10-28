@@ -45,6 +45,9 @@
     height: 90px;
     display: block;
   }
+  div {
+    width: 100% !important;
+  }
 }
 
 .foxyFull {
@@ -58,11 +61,23 @@
     height: 150px;
     display: block;
   }
+  div {
+    width: 100% !important;
+  }
 }
 
 .stickyFox {
   position: sticky;
   top: 25px;
+}
+
+.stickyFox {
+  position: sticky;
+  top: 25px;
+}
+
+.stickyFox.oneBlockSide {
+  z-index: 0;
 }
 
 

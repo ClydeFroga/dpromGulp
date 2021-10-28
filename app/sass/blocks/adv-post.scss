@@ -1,0 +1,15 @@
+.adv-post {
+  span {
+    line-height: 16px;
+    letter-spacing: .4px;
+    display: block;
+    margin-bottom: 15px;
+  }
+  &__title {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  &__text {
+    font-size: 12px;
+  }
+}

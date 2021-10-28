@@ -177,7 +177,7 @@
       line-height: 16px !important;
     }
     .horizontalBar__RightText {
-      font-size: 11px !important;
+      font-size: 12px !important;
       line-height: 16px !important;
     }
     .horizontalBarFirst {
@@ -240,11 +240,11 @@
 @media (max-width: 767px) {
   .horizontalBar {
     &__Right > span {
-      font-size: 11px !important;
+      font-size: 12px !important;
       line-height: 13px !important;
     }
     .horizontalBar__RightTitle {
-      font-size: 11px !important;
+      font-size: 12px !important;
     }
     div:last-child {
       border: none;

@@ -5,6 +5,21 @@
   outline: none;
 }
 
+body.effect:after {
+  //z-index: 100;
+  z-index: -10;
+  transition: 0.3s;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: '';
+}
+body.effectOn:after {
+  background-color: rgba(0,0,0,.9);
+  z-index: 100;
+}
+
 img {
   max-width: 100%;
   //width: 100%;
@@ -44,52 +59,4 @@ a {
 
 
 
-@import "blocks/header";
-@import "blocks/header__container";
-@import "blocks/breadcrumbs";
-@import "blocks/footer";
-@import "blocks/socialMedia";
-@import "blocks/foxy";
-@import "blocks/search";
-@import "blocks/horizontalBar";
-@import "blocks/dateAndViews";
-@import "blocks/verticalBlock";
-@import "blocks/imgBlock";
-@import "blocks/titles";
-@import "blocks/slider";
-@import "blocks/loadmore";
-@import "blocks/pagination";
-@import "blocks/sections";
-@import "blocks/newMagazine";
-@import "blocks/sidebarNews";
-@import "blocks/modalSubscription";
-@import "blocks/blockWithoutImg";
-@import "blocks/inTrend";
-@import "blocks/aboutUs";
-@import "blocks/foxyFBlock";
-@import "blocks/partnerMaterial";
-@import "blocks/newsOfADay";
-@import "blocks/listedUp";
-@import "blocks/cookie";
-@import "blocks/formInst";
-@import "blocks/oneBlockSide";
-@import "blocks/bigAndSlider";
-@import "blocks/popular";
-@import "blocks/button";
-@import "blocks/form";
-@import "blocks/part1";
-@import "blocks/part2";
-@import "blocks/part3";
-@import "blocks/part4";
-@import "blocks/part5";
-@import "blocks/part6";
-@import "blocks/part7";
-@import "blocks/part8";
-@import "blocks/events";
-@import "blocks/single";
-@import "blocks/journal";
-@import "blocks/rubric";
-@import "blocks/spec";
-@import "blocks/page404";
-@import "blocks/magArchive";
-@import "blocks/fullPageSwitch";
+@import 'blocks/**/*';
